@@ -1,0 +1,95 @@
+// Palette
+$c-alpha: #284773;
+$c-beta: #ffa200;
+$c-gamma: #f2f7ff;
+$c-light: #fbfbfb;
+$c-dark: #333333;
+$c-dark-2: #192840;
+$c-danger: #f44336;
+$c-success: #1bc100;
+$c-info: #fff6e5;
+$c-info-2: #40a183;
+$c-muted: #999999;
+$c-muted-2: #bbc0c8;
+$c-muted-3: #767e8f;
+
+// Typography
+.h1 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.h3 {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.h4 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.h5 {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@mixin easeOut {
+  transition: all 0.4s ease-in-out;
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Media Query Mixins
+@mixin mediaSm {
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media only screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media only screen and (min-width: 1171px) {
+    @content;
+  }
+}
+
+// @mixin orientPort {
+//   @media only screen and (orientation: portrait) {
+//     @content;
+//   }
+// }
+
+@mixin orientLand {
+  @media only screen and (orientation: landscape) {
+    @content;
+  }
+}

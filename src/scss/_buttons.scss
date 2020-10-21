@@ -1,0 +1,82 @@
+// Buttons
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+
+  &:active {
+    transform: scale(0.98);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    // left: -8rem;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      355.79deg,
+      #ffffff 26%,
+      rgba(255, 255, 255, 0) 37.41%
+    );
+    opacity: 0.3;
+    transform: rotate(-57deg);
+    -webkit-animation: 3.3s linear 0s infinite normal shine;
+    animation: 3.3s linear 0s infinite normal shine;
+  }
+}
+
+.btn-primary {
+  padding: 1.0625rem;
+  background-color: $c-alpha;
+  color: $c-light;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.btn-primary--2 {
+  padding: 0.8125rem;
+}
+
+.btn-primary--3 {
+  padding: 0.625rem;
+}
+
+.btn-secondary {
+  padding: 0.875rem;
+  background-color: $c-beta;
+  color: $c-light;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.btn-tertiary {
+  padding: 0.75rem;
+  border: 1px $c-light solid;
+  color: $c-light;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.btn-quaternary {
+  padding: 1.0625rem;
+  border: 1px $c-alpha solid;
+  color: $c-alpha;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.btn-quaternary--2 {
+  border-color: $c-beta;
+  color: $c-beta;
+}

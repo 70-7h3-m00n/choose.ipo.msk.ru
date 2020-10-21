@@ -1,0 +1,6 @@
+
+
+
+bug: on click and drag on the select i get multiple inputs selected
+Make an animation on hover selects
+Make it so that i can only type in a number
