@@ -51,9 +51,9 @@ $c-muted-3: #767e8f;
 // Set Text Color
 @function set-text-color($color) {
   @if (lightness($color) > 50) {
-    @return #000;
+    @return $c-dark;
   } @else {
-    @return #fff;
+    @return $c-light;
   }
 }
 

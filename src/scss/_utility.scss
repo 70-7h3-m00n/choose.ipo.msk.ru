@@ -10,3 +10,23 @@
 //                                   supported by Chrome, Edge, Opera and Firefox */
 // }
 
+.container{
+  min-width: 100%;
+  min-height: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container--header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-beta{
+  color: $c-beta;
+}
+
+.d-block{
+  display: block;
+}
