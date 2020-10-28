@@ -1,8 +1,3 @@
-.section{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .section-heading{
   min-height: 100vh;
   background-color: $c-alpha;
@@ -13,6 +8,8 @@
   background-size: cover;
   z-index: 0;
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
 
   &:after {
     content: '';
@@ -22,8 +19,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: $c-alpha;
-    opacity: 0.91;
+    background: linear-gradient(180deg, rgba(40, 71, 115, 0.88) 37.21%, #284773 99.21%);
   }
 }
 

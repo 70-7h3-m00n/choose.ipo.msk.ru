@@ -1,0 +1,12 @@
+.section-below-heading{
+  background-color: $c-alpha;
+  color: set-text-color($c-alpha);
+  padding-top: 0;
+  & .cards{
+    & .cards__card{
+      & .card__icon{
+        background-image: url(../img/svg/logo.svg);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.testimonials__testimonial{
+  text-align: center;
+  margin-bottom: 2rem;
+  &:nth-last-child(1){
+    margin-bottom: 0;
+  }
+}
+
+.testimonial__number{
+  & p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+}
+
+.testimonial__info{
+  & p{
+    margin-top: 0.8rem;
+  }
+}
