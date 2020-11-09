@@ -1,0 +1,43 @@
+.steps {
+  padding: 0;
+  position: relative;
+}
+
+.steps__step {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 4rem;
+}
+
+.steps__line {
+  display: flex;
+  background-color: $c-alpha;
+  height: 90%;
+  width: 5px;
+  position: absolute;
+  top: 0;
+  left: 1.45rem;
+}
+
+.step__num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $c-alpha;
+  color: set-text-color($c-alpha);
+  border-radius: 50%;
+}
+
+.step__title {
+  & p {
+    margin: 0;
+  }
+}
