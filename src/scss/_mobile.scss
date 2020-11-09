@@ -7,8 +7,7 @@
 }
 
 // Tablets & Small Laptops
-@include mediaMd{
-
+@include mediaMd {
 }
 
 // Smartphones
@@ -16,4 +15,7 @@
 }
 
 @include orientLand {
+  .section-heading {
+    padding-top: 6rem;
+  }
 }

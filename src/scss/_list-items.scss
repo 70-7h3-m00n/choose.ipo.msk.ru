@@ -1,0 +1,27 @@
+.list-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.list-items__list-item {
+  display: flex;
+  align-items: flex-start;
+  & p {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+}
+
+.list-items--alt {
+  & .list-items__list-item {
+    & p {
+      padding-left: 0.8rem;
+    }
+  }
+}

@@ -48,30 +48,34 @@ main {
   min-height: 100%;
 }
 
-.section{
+.section {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   position: relative;
 }
 
-.title{
+.content {
+  position: relative;
+}
+
+.title {
   text-align: center;
   margin-bottom: 2.5rem;
-  & h2{
+  & h2 {
     margin-top: 0;
   }
 }
 
-.top-right-corner{
+.top-right-corner {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: linear-gradient(44.84deg, #368BE3 50.1%, $c-light 50.33%);
+  background: linear-gradient(44.84deg, #368be3 50.1%, $c-light 50.33%);
   box-shadow: -2px 2px 16px rgba(0, 0, 0, 0.25);
   top: 0;
   right: 0;
 }
 
-footer{
+footer {
   padding-bottom: 20rem;
 }

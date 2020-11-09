@@ -1,0 +1,61 @@
+.section-get-diploma {
+  & .btn {
+    margin-top: 2.5rem;
+  }
+  background-color: $c-alpha;
+  color: #fff;
+}
+
+.muted-logo {
+  background-image: url(../img/logo-dimmer.png);
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  min-width: 300px;
+  min-height: 300px;
+  position: absolute;
+  top: -4rem;
+  right: -6rem;
+}
+
+.diplomas {
+  position: relative;
+  min-height: 17rem;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diplomas__inner {
+  position: relative;
+}
+
+.diplomas__diploma {
+  min-width: 200px;
+  min-height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  position: absolute;
+}
+
+.diplomas__diploma-1 {
+  background-image: url('../img/diploma/diploma-1.jpg');
+  top: -12rem;
+  left: -3.8rem; // 8rem
+  z-index: 3;
+}
+
+.diplomas__diploma-2 {
+  background-image: url('../img/diploma/diploma-2.jpg');
+  top: -4rem;
+  left: -5rem; // 5rem
+  z-index: 4;
+}
+
+.diplomas__diploma-3 {
+  background-image: url('../img/diploma/diploma-3.jpg');
+  top: -8rem;
+  left: -8.5rem;
+  z-index: 2;
+}
