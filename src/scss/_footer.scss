@@ -1,0 +1,28 @@
+footer {
+  background-color: $c-alpha;
+  & .content p {
+    text-align: center;
+  }
+  & p,
+  & .title {
+    color: #fff;
+  }
+  padding-top: 2rem;
+  form {
+    background-color: #fff;
+  }
+}
+
+.footer-under {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: $c-dark-2;
+  color: #fff;
+  & .list-items {
+    padding-top: 1rem;
+  }
+  & .btn-alt {
+    color: #fff;
+  }
+}
