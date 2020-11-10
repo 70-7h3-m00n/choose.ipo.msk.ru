@@ -1,0 +1,51 @@
+// Widescreens
+@include mediaXl {
+}
+
+// Desktops & Laptops
+@include mediaLg {
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  // Typography
+  .h1 {
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  .h2 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 33px;
+  }
+
+  .h3 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 26px;
+  }
+
+  .h4 {
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 19px;
+  }
+
+  .h5 {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+// Smartphones
+@include mediaSm {
+}
+
+@include orientLand {
+  .section-heading {
+    padding-top: 6rem;
+  }
+}

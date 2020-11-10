@@ -44,7 +44,7 @@
       <section class="section section-heading">
         <div class="container">
           <div class="content section-heading__content">
-            <h1 class="h2">Профессиональная переподготовка <span class="c-beta d-block">в сфере маркетинга</span></h1>
+            <h1 class="h2">Профессиональная переподготовка <span id="heading-title" class="c-beta d-block"></span></h1>
             <ul class="list-items">
               <li class="list-items__list-item">
                 <p>- Учебные программы 2020 года</p> 
@@ -184,7 +184,7 @@
                 <p class="h4">Наш институт имеет бессрочную лицензию на образовательную деятельность. Нашу лицензию можно проверить на сайте Рособрнадзор</p>
               </div>
               <div class="card__btn">
-                <a href="http://isga.obrnadzor.gov.ru/rlic/details/163962cf-2a44-4fbd-b607-ea0b74071334/" class="btn btn-primary" target="_blank" rel=”noopener” or rel=”noreferrer”>Проверить лицензию -></a>
+                <a href="http://isga.obrnadzor.gov.ru/rlic/details/163962cf-2a44-4fbd-b607-ea0b74071334/" class="btn btn-alt c-alpha" target="_blank" rel=”noopener” or rel=”noreferrer”>Проверить лицензию -></a>
               </div>
             </div>
             <div class="cards__card">
@@ -222,7 +222,7 @@
                 <p class="h4">"Институт профессионального образования", является членом "Союза руководителей учреждений и подразделений дополнительного профессионального образования и работодателей"</p>
               </div>
               <div class="card__btn">
-                <a href="#!" class="btn btn-primary">Узнать подробнее</a>
+                <a href="#!" class="btn btn-alt">Узнать подробнее -></a>
               </div>
             </div>
           </div>
@@ -230,52 +230,16 @@
       </section>
 
       <!-- Section programs -->
-      <section class="section section-programs">
+      <section id="section-programs" class="section section-programs">
         <div class="container">
           <div class="title">
-            <h2 class="h2">Программы профессиональной переподготовки <span class="c-alpha d-block">в сфере маркетинга</span></h2>
+            <h2 class="h2">Программы профессиональной переподготовки <span id="dynamic-programs-title" class="c-alpha d-block">в сфере маркетинга</span></h2>
             <p class="h4 c-muted">Просто выберите нужную программу, количество часов и сделайте заказ.
             </p>
           </div>
-          <!-- <p>Здесь будет функционал выбора программ...</p> -->
           
-          <div class="cards cards--half-dim">
-            <div class="cards__card">
-              <div class="card__title">
-                <p class="h3">Антикризисное управление</p>
-              </div>
-              <!-- <div class="card__info">
-                <p class="h4">Наш институт имеет бессрочную лицензию на образовательную деятельность. Нашу лицензию можно проверить на сайте Рособрнадзор</p>
-              </div> -->
-              <div class="card__half">
-                <div class="half__left">
-                  <p class="h4">От 246 часов</p>
-                </div>
-                <div class="half__right">
-                  <p class="h4">От 14000руб</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card__title">
-                <p class="h3">Администрирование в сфере гостиничного сервиса</p>
-              </div>
-              <!-- <div class="card__info">
-                <p class="h4">Наш институт имеет бессрочную лицензию на образовательную деятельность. Нашу лицензию можно проверить на сайте Рособрнадзор</p>
-              </div> -->
-              <div class="card__half">
-                <div class="half__left">
-                  <p class="h4">От 246 часов</p>
-                </div>
-                <div class="half__right">
-                  <p class="h4">От 14000руб</p>
-                </div>
-              </div>
-              <div class="card__btn">
-                <a href="#!" class="btn btn-primary">Узнать подробнее</a>
-              </div>
-            </div>
+          <!-- Dynamic programs -->
+          <div id="dynamic-programs" class="cards cards--half-dim">
           </div>
         </div>
       </section>
@@ -606,49 +570,45 @@
 
           <ul class="list-items">
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Менеджмент</a>
+              <a id="management" class="h4 btn-alt">Менеджмент</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Экономика</a>
+              <a id="economics" class="h4 btn-alt">Экономика</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Педагогика</a>
+              <a id="pedagogy" class="h4 btn-alt">Педагогика</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Психология</a>
+              <a id="psychology" class="h4 btn-alt">Психология</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Медицина</a>
+              <a id="healthcare" class="h4 btn-alt">Медицина</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Информатика и вычислительная техника
+              <a id="informatics" class="h4 btn-alt">Информатика и вычислительная техника
               </a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Юриспруденция</a>
+              <a id="jurisprudence" class="h4 btn-alt">Юриспруденция</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Маркетинг</a>
+              <a id="marketing" class="h4 btn-alt">Маркетинг</a>
             </li>
 
             <li class="list-items__list-item">
-              <a href="#!" class="h4 btn-alt">Технические направления</a>
+              <a id="technology" class="h4 btn-alt">Технические направления</a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
-
-    <a id='test' class="test">test</a>
-    <a id='test2' class="test">test2</a>
-    <p id='text'>DYNAMIC TEXT</p>
 
 
       <!-- <a href="#" class="btn btn-primary">Подать заявку</a>
