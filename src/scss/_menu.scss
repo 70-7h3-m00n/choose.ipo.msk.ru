@@ -27,7 +27,6 @@
 }
 
 .menu__menu-mobile {
-  min-width: 100%;
   z-index: 99;
   @include easeOut;
 }
@@ -98,7 +97,7 @@
 
 .menu-mobile__menu-panel {
   position: fixed;
-  // background-color: $secondary-color;
+  background-color: $c-alpha;
   color: #fff;
   top: 0;
   right: 0;
@@ -157,4 +156,10 @@
 .nav-item__link {
   position: relative;
   color: #fff;
+}
+
+@include mediaMd {
+  .mobile-menu {
+    display: none;
+  }
 }

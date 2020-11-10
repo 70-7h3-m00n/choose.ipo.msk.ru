@@ -30,11 +30,63 @@
       <div class="container container--header">
         <img src="img/logo.png" alt="ИПО Логотип">
 
-        <a class="hamburger" type="button">
-          <div class="hamburger__line"></div>
-          <div class="hamburger__line"></div>
-          <div class="hamburger__line"></div>
-        </a>
+        <div class="mobile-menu menu__menu-mobile">
+          <input
+                type="checkbox"
+                class="menu-mobile__toggler"
+                name="menu-toggle"
+                id="menu-toggle"
+              />
+          <a class="hamburger" type="button">
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+          </a>
+          <div class="menu-mobile__menu-panel">
+            <div
+              class="menu-mobile__hamburder menu-mobile__hamburder--panel"
+            ></div>
+            <div class="menu-panel__menu-panel-row">
+              <div class="menu-panel-row__number-wrapper">
+                <div class="number-wrapper__text">
+                  <p>Номер приемной комиссии:</p>
+                </div>
+                <div class="number-wrapper__number">
+                  <p>+7 (499) 648-62-26</p>
+                </div>
+                <div class="number-wrapper__btn">
+                  <a
+                    id="cta-make-a-call"
+                    href="tel:+7-499-648-6226"
+                    class="btn btn-tertiary"
+                  >
+                    НАБРАТЬ
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="menu-panel__menu-panel-row">
+              <nav class="side-panel-nav">
+                <ul class="side-panel-nav__side-panel-nav-items">
+                  <li class="side-panel-nav-items__nav-item">
+                    <a href="#about" class="nav-item__link"> О проекте </a>
+                  </li>
+                  <li class="side-panel-nav-items__nav-item">
+                    <a href="#partners" class="nav-item__link"
+                      >Вузы-партнеры</a
+                    >
+                  </li>
+                  <li class="side-panel-nav-items__nav-item">
+                    <a href="#trusted-by" class="nav-item__link"
+                      >С Кем сотрудничаем</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </header>
 
@@ -490,7 +542,7 @@
               <li class="steps__step">
                 <div class="step__num h3">1</div>
                 <div class="step__title">
-                  <p class="h3 c-alpha">Получаете доступ и изучаете темы</p>
+                  <p class="h3 c-alpha">Получайте доступ и изучайте темы</p>
                 </div>
                 <div class="step__info">
                   <p class="h4">В личном кабинете Вы изучаете модули программы, просматриваете видео-лекции и присутствуете на вебинарах.</p>
@@ -499,7 +551,7 @@
               <li class="steps__step">
                 <div class="step__num h3">2</div>
                 <div class="step__title">
-                  <p class="h3 c-alpha">Выполняете задания</p>
+                  <p class="h3 c-alpha">Выполняйте задания</p>
                 </div>
                 <div class="step__info">
                   <p class="h4">Изучая учебные материалы, реализована проверка усвоенных знаний посредством онлайн-тестирования. Вы обучаетесь в свободное для себя время и в том темпе, в котором Вам удобно.</p>
@@ -508,7 +560,7 @@
               <li class="steps__step">
                 <div class="step__num h3">3</div>
                 <div class="step__title">
-                  <p class="h3 c-alpha">Работаете со спикерами</p>
+                  <p class="h3 c-alpha">Работайте со спикерами</p>
                 </div>
                 <div class="step__info">
                   <p class="h4">Получаете помощь персонального куратора и общаетесь с преподавателями на вебинарах, закрепляя знания и исправляете ошибки.</p>
@@ -517,7 +569,7 @@
               <li class="steps__step">
                 <div class="step__num h3">4</div>
                 <div class="step__title">
-                  <p class="h3 c-alpha">Защищаете дипломную работу</p>
+                  <p class="h3 c-alpha">Защищайте дипломную работу</p>
                 </div>
                 <div class="step__info">
                   <p class="h4">И дополняете ею своё портфолио.</p>
