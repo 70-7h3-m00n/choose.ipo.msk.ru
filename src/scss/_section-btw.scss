@@ -1,5 +1,16 @@
-.section-btw{
+.section-btw {
   background-color: $c-alpha;
   color: set-text-color($c-alpha);
   overflow: hidden;
+}
+
+@include mediaMd {
+  .section-btw {
+    & .cards {
+      & .cards__card {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
 }

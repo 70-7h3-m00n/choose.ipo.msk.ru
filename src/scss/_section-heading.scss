@@ -34,3 +34,15 @@
     text-align: center;
   }
 }
+
+@include mediaMd {
+  .section-heading__content {
+    align-items: flex-start;
+  }
+
+  .section-heading__content {
+    & h1 {
+      text-align: left;
+    }
+  }
+}

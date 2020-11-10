@@ -23,3 +23,16 @@ header {
     margin-bottom: 0.4375rem;
   }
 }
+
+@include mediaMd {
+  body .section-heading {
+    padding-top: 0;
+  }
+}
+
+// Desktops & Laptops
+@include mediaXl {
+  .section-heading__content h1 {
+    font-size: 2rem;
+  }
+}

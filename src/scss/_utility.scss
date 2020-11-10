@@ -10,35 +10,47 @@
 //                                   supported by Chrome, Edge, Opera and Firefox */
 // }
 
-.container{
+.container {
   min-width: 100%;
   min-height: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.container--header{
+.container--header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.c-beta{
+.c-beta {
   color: $c-beta;
 }
 
-.c-alpha{
+.c-alpha {
   color: $c-alpha;
 }
 
-.c-muted{
+.c-muted {
   color: $c-muted;
 }
 
-.d-block{
+.c-muted-3 {
+  color: $c-muted-3;
+}
+
+.d-block {
   display: block;
 }
 
-.fw-bold{
+.fw-bold {
   font-weight: bold;
+}
+
+@include mediaMd {
+  .container {
+    min-width: initial;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 }

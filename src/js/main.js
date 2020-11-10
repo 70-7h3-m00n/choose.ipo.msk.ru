@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 
 const sectionPrograms = document.getElementById('section-programs');
+const body = document.getElementById('body');
 
 /////////////////////////////////////////////////////////////////////
 // States
@@ -170,8 +171,8 @@ const management = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -267,8 +268,8 @@ const economics = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -364,8 +365,8 @@ const pedagogy  = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -462,8 +463,8 @@ const psychology = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -559,8 +560,8 @@ const healthcare = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -656,8 +657,8 @@ const informatics = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -753,8 +754,8 @@ const jurisprudence = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -884,8 +885,8 @@ const marketing = function (page){
       </div>
     </div>
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 
@@ -898,8 +899,8 @@ const technology = function (page){
   dynamicPrograms.innerHTML = `
     здесь будут программы технической сферы
   `;
-  sectionPrograms.scrollIntoView({
-    behavior: 'smooth'
+  body.scrollIntoView({
+    behavior: 'auto'
   });
 }
 

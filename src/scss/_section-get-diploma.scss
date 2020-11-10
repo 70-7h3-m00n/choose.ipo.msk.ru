@@ -59,3 +59,29 @@
   left: -8.5rem;
   z-index: 2;
 }
+
+@include mediaMd {
+  .diplomas {
+    min-height: 30rem;
+    padding-bottom: 10rem;
+  }
+  .diplomas__diploma {
+    min-width: 400px;
+    min-height: 400px;
+  }
+
+  .diplomas__diploma-1 {
+    top: -14rem;
+    left: -6.8rem;
+  }
+
+  .diplomas__diploma-2 {
+    top: -2rem;
+    left: -8rem;
+  }
+
+  .diplomas__diploma-3 {
+    top: -8rem;
+    left: -14.5rem;
+  }
+}

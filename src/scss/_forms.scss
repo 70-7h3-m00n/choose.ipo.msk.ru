@@ -21,3 +21,24 @@
     color: $c-muted;
   }
 }
+
+@include mediaMd {
+  .form {
+    max-width: 20rem;
+    min-width: 20rem;
+    & .btn {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}
+
+@include mediaXl {
+  .input--field {
+    max-width: 15rem;
+  }
+  .form {
+    max-width: 19rem;
+    min-width: 19rem;
+  }
+}

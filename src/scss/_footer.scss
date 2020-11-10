@@ -26,3 +26,20 @@ footer {
     color: #fff;
   }
 }
+
+@include mediaMd {
+  footer {
+    & .content p {
+      text-align: left;
+    }
+    & .contact-info {
+      margin-right: 3rem;
+    }
+    & .content {
+      display: flex;
+      flex: 0 49%;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

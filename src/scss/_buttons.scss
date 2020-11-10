@@ -94,3 +94,9 @@
   cursor: pointer;
   text-transform: none;
 }
+
+@include mediaMd {
+  .btn {
+    max-width: 15rem;
+  }
+}

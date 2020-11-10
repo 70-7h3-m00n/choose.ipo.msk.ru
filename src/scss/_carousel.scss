@@ -8,10 +8,12 @@
 
 .carousel__item {
   display: flex;
+  flex-wrap: wrap;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   flex: 0 48%;
+  // min-width: 7rem;
   padding: 0.5rem;
   margin-bottom: 1.5rem;
   & img {
@@ -25,5 +27,11 @@
   &:nth-child(odd) {
     padding-left: 0;
     margin-right: 0;
+  }
+}
+
+@include mediaMd {
+  .carousel__item {
+    flex: 0 22%;
   }
 }
