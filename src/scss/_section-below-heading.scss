@@ -1,11 +1,30 @@
-.section-below-heading{
+.section-below-heading {
   background-color: $c-alpha;
   color: set-text-color($c-alpha);
   padding-top: 0;
-  & .cards{
-    & .cards__card{
-      & .card__icon{
+  & .cards {
+    & .cards__card {
+      & .card__icon {
         background-image: url(../img/svg/logo.svg);
+      }
+    }
+  }
+}
+
+@include mediaMd {
+  .section-below-heading {
+    & .cards {
+      flex-direction: row;
+      justify-content: space-between;
+      & .cards__card {
+        max-width: 31%;
+        margin-right: 1rem;
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+        & p {
+          font-size: 1rem;
+        }
       }
     }
   }

@@ -75,7 +75,7 @@
   }
 
   &::before {
-    content: '\00d7';
+    content: "\00d7";
     display: block;
     margin: 0 auto;
     padding-right: 0.4rem;
@@ -161,5 +161,14 @@
 @include mediaMd {
   .mobile-menu {
     display: none;
+  }
+}
+
+.side-panel-nav__side-panel-nav-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  & .side-panel-nav-items__nav-item {
+    display: flex;
   }
 }

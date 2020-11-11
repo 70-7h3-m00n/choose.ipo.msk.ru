@@ -33,7 +33,7 @@ body {
 
 body.dark-overlay {
   &:after {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     right: 0;
@@ -76,12 +76,26 @@ main {
   right: 0;
 }
 
+.desktop-only {
+  display: none;
+}
+
 @include mediaMd {
   html {
     font-size: 18px;
   }
   .title {
     text-align: left;
+  }
+  .desktop-only {
+    display: block;
+  }
+  span.desktop-only {
+    display: inline;
+  }
+  .mobile-only,
+  .btn.mobile-only {
+    display: none;
   }
 }
 

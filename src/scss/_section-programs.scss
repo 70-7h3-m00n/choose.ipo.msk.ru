@@ -1,3 +1,38 @@
-.section-programs{
+.section-programs {
   text-align: center;
+}
+
+@include mediaMd {
+  .section-programs {
+    & .cards {
+      & .cards__card {
+        display: grid;
+        flex: initial;
+        width: 100%;
+        margin-right: 0;
+        // max-height: 10rem;
+        grid-template-areas:
+          "title half"
+          "btn btn";
+      }
+      & .card__title {
+        grid-area: title;
+        min-height: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2rem;
+      }
+      & .card__half {
+        grid-area: half;
+      }
+      & .card__btn {
+        margin-top: 1rem;
+        grid-area: btn;
+        & .btn {
+          min-width: initial;
+        }
+      }
+    }
+  }
 }

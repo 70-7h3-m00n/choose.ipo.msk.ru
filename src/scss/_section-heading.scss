@@ -2,14 +2,14 @@
   min-height: 100vh;
   background-color: $c-alpha;
   color: set-text-color($c-alpha);
-  background-image: url('../img/bg.jpg');
+  background-image: url("../img/bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -21,6 +21,11 @@
       rgba(40, 71, 115, 0.88) 37.21%,
       #284773 99.21%
     );
+  }
+
+  & .form {
+    background-color: $c-light;
+    color: $c-dark;
   }
 }
 
@@ -37,7 +42,7 @@
 
 @include mediaMd {
   .section-heading__content {
-    align-items: flex-start;
+    flex-direction: row;
   }
 
   .section-heading__content {

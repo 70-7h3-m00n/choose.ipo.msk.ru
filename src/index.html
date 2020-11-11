@@ -3,10 +3,7 @@
   <head>
     <!-- <meta name="robots" content="noindex" /> -->
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#0075FF" />
     <meta
@@ -28,15 +25,15 @@
   <body id="body">
     <header id="header">
       <div class="container container--header">
-        <img src="img/logo.png" alt="ИПО Логотип">
+        <img src="img/logo.png" alt="ИПО Логотип" />
 
         <div class="mobile-menu menu__menu-mobile">
           <input
-                type="checkbox"
-                class="menu-mobile__toggler"
-                name="menu-toggle"
-                id="menu-toggle"
-              />
+            type="checkbox"
+            class="menu-mobile__toggler"
+            name="menu-toggle"
+            id="menu-toggle"
+          />
           <a class="hamburger" type="button">
             <div class="hamburger__line"></div>
             <div class="hamburger__line"></div>
@@ -69,49 +66,96 @@
               <nav class="side-panel-nav">
                 <ul class="side-panel-nav__side-panel-nav-items">
                   <li class="side-panel-nav-items__nav-item">
-                    <a href="#about" class="nav-item__link"> О проекте </a>
+                    <a href="#!" class="nav-item__link"> Программы </a>
                   </li>
                   <li class="side-panel-nav-items__nav-item">
-                    <a href="#partners" class="nav-item__link"
-                      >Вузы-партнеры</a
-                    >
+                    <a href="#!" class="nav-item__link">Преимущества</a>
                   </li>
                   <li class="side-panel-nav-items__nav-item">
-                    <a href="#trusted-by" class="nav-item__link"
-                      >С Кем сотрудничаем</a
-                    >
+                    <a href="#!" class="nav-item__link">Контакты</a>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
         </div>
-        
+
+        <div class="desktop-menu desktop-only">
+          <ul class="menu-items">
+            <li class="menu-items__item">
+              <a href="#!">О центре</a>
+            </li>
+            <li class="menu-items__item">
+              <a href="#!">Программы</a>
+            </li>
+            <li class="menu-items__item">
+              <a href="#!">Преимущества</a>
+            </li>
+            <li class="menu-items__item">
+              <a href="#!">Контакты</a>
+            </li>
+          </ul>
+
+          <div class="desktop-menu__cta">
+            <!-- <p class="h4">8 800 333 92 59</p> -->
+            <a href="#!" class="btn btn-secondary">Оформить заявку</a>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="main">
-
       <!-- Section heading -->
       <section class="section section-heading">
         <div class="container">
           <div class="content section-heading__content">
-            <h1 class="h2">Профессиональная переподготовка <span id="heading-title" class="c-beta d-block"></span></h1>
-            <ul class="list-items">
-              <li class="list-items__list-item">
-                <p class='h4'>- Учебные программы 2020 года</p> 
-              </li>
-              <li class="list-items__list-item">
-                <p class='h4'>- Рассрочка платежа</p> 
-              </li>
-              <li class="list-items__list-item">
-                <p class='h4'>- Дистанционная форма обучения</p> 
-              </li>
-              <li class="list-items__list-item">
-                <p class='h4'>- Престижный диплом</p> 
-              </li>
-            </ul>
-            <a href="#!" class="btn btn-secondary">Подать заявку</a>
+            <div class="headings">
+              <h1 class="h2">
+                Профессиональная переподготовка
+                <span id="heading-title" class="c-beta d-block"></span>
+              </h1>
+              <ul class="list-items">
+                <li class="list-items__list-item">
+                  <p class="h4">- Учебные программы 2020 года</p>
+                </li>
+                <li class="list-items__list-item">
+                  <p class="h4">- Рассрочка платежа</p>
+                </li>
+                <li class="list-items__list-item">
+                  <p class="h4">- Дистанционная форма обучения</p>
+                </li>
+                <li class="list-items__list-item">
+                  <p class="h4">- Престижный диплом</p>
+                </li>
+              </ul>
+            </div>
+            <a href="#!" class="btn btn-secondary mobile-only">Подать заявку</a>
+
+            <!-- Desktop only -->
+            <form class="form desktop-only">
+              <div class="form__title">
+                <h3 class="h3">
+                  Закажите дистанционный курс профессиональной переподготовки
+                </h3>
+              </div>
+              <div class="form__subtitle">
+                <h3 class="h4">
+                  Закажите дистанционный курс профессиональной переподготовки
+                </h3>
+              </div>
+              <div class="form__input-group">
+                <input
+                  class="input-group__input input--field"
+                  type="text"
+                  placeholder="Ваш телефон"
+                />
+                <input
+                  class="input-group__input btn btn-secondary"
+                  type="submit"
+                  value="ЗАКАЗАТЬ"
+                />
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -121,27 +165,29 @@
         <div class="container">
           <div class="cards cards-alt-2 cards--transparent">
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
-                <p class="h4">Быстро доставляем документы в любой город России</p>
+                <p class="h4">
+                  Быстро доставляем документы в любой город России
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
-                <p class="h4">Выдаем дипломы установленного образца Министерством образования РФ</p>
+                <p class="h4">
+                  Выдаем дипломы установленного образца Министерством
+                  образования РФ
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
-                <p class="h4">Предоставляем рассрочку платежа без процентов напрямую от Института</p>
+                <p class="h4">
+                  Предоставляем рассрочку платежа без процентов напрямую от
+                  Института
+                </p>
               </div>
             </div>
           </div>
@@ -156,7 +202,10 @@
           </div>
           <div class="content">
             <p class="h4">
-              Институт профессионального образования – это удобное и быстрое получение дополнительного профессионального образования и повышения квалификации онлайн по востребованным на рынке гуманитарным, техническим и бизнес направлениям.
+              Институт профессионального образования – это удобное и быстрое
+              получение дополнительного профессионального образования и
+              повышения квалификации онлайн по востребованным на рынке
+              гуманитарным, техническим и бизнес направлениям.
             </p>
           </div>
         </div>
@@ -171,7 +220,9 @@
                 <p class="h1 c-beta">24/7</p>
               </div>
               <div class="testimonial__info">
-                <p class="h4">Поддержка персонального куратора на весь этап обучения</p>
+                <p class="h4">
+                  Поддержка персонального куратора на весь этап обучения
+                </p>
               </div>
             </div>
             <div class="testimonials__testimonial">
@@ -179,7 +230,10 @@
                 <p class="h1 c-beta">>50</p>
               </div>
               <div class="testimonial__info">
-                <p class="h4">Первоклассных спикеров и преподавателей разрабатывают программы</p>
+                <p class="h4">
+                  Первоклассных спикеров и преподавателей разрабатывают
+                  программы
+                </p>
               </div>
             </div>
             <div class="testimonials__testimonial">
@@ -187,7 +241,9 @@
                 <p class="h1 c-beta">250+</p>
               </div>
               <div class="testimonial__info">
-                <p class="h4">Обучающих программ по 19 направлениям 2020 года</p>
+                <p class="h4">
+                  Обучающих программ по 19 направлениям 2020 года
+                </p>
               </div>
             </div>
             <div class="testimonials__testimonial">
@@ -195,7 +251,9 @@
                 <p class="h1 c-beta">9000+</p>
               </div>
               <div class="testimonial__info">
-                <p class="h4">Доступ к онлайн-библиотеке института каждому обучающемуся</p>
+                <p class="h4">
+                  Доступ к онлайн-библиотеке института каждому обучающемуся
+                </p>
               </div>
             </div>
             <div class="testimonials__testimonial">
@@ -203,7 +261,9 @@
                 <p class="h1 c-beta">13%</p>
               </div>
               <div class="testimonial__info">
-                <p class="h4">Можно вернуть в качестве налогового вычета за обучение</p>
+                <p class="h4">
+                  Можно вернуть в качестве налогового вычета за обучение
+                </p>
               </div>
             </div>
             <div class="testimonials__testimonial">
@@ -211,7 +271,9 @@
                 <p class="h1 c-beta">14600</p>
               </div>
               <div class="testimonial__info">
-                <p class="h4">Почти 15 тыс. дипломов выдали выпускникам института</p>
+                <p class="h4">
+                  Почти 15 тыс. дипломов выдали выпускникам института
+                </p>
               </div>
             </div>
           </div>
@@ -226,52 +288,67 @@
           </div>
           <div class="cards">
             <div class="cards__card">
-              <div class="card__icon">
-
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Лицензия 039703</p>
               </div>
               <div class="card__info">
-                <p class="h4">Наш институт имеет бессрочную лицензию на образовательную деятельность. Нашу лицензию можно проверить на сайте Рособрнадзор</p>
+                <p class="h4">
+                  Наш институт имеет бессрочную лицензию на образовательную
+                  деятельность. Нашу лицензию можно проверить на сайте
+                  Рособрнадзор
+                </p>
               </div>
               <div class="card__btn">
-                <a href="http://isga.obrnadzor.gov.ru/rlic/details/163962cf-2a44-4fbd-b607-ea0b74071334/" class="btn btn-alt c-alpha" target="_blank" rel=”noopener” or rel=”noreferrer”>Проверить лицензию -></a>
+                <a
+                  href="http://isga.obrnadzor.gov.ru/rlic/details/163962cf-2a44-4fbd-b607-ea0b74071334/"
+                  class="btn btn-alt c-alpha"
+                  target="_blank"
+                  rel="”noopener”"
+                  or
+                  rel="”noreferrer”"
+                  >Проверить лицензию -></a
+                >
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Состоим в реестре ФРДО</p>
               </div>
               <div class="card__info">
-                <p class="h4">ФРДО – это Федеральная информационная система «Федеральный реестр сведений о документах об образовании и (или) о квалификации, документах об обучении»
-                  Каждый выданный нами документ об образовании вносится в реестр ФРДО
+                <p class="h4">
+                  ФРДО – это Федеральная информационная система «Федеральный
+                  реестр сведений о документах об образовании и (или) о
+                  квалификации, документах об обучении» Каждый выданный нами
+                  документ об образовании вносится в реестр ФРДО
                 </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Соответствие ФГОС</p>
               </div>
               <div class="card__info">
-                <p class="h4">Все программы нашего учебного центра соответствуют ФГОС Министерства образования РФ, последним профстандартам Министерства труда РФ и другим нормативным актам и правилам</p>
+                <p class="h4">
+                  Все программы нашего учебного центра соответствуют ФГОС
+                  Министерства образования РФ, последним профстандартам
+                  Министерства труда РФ и другим нормативным актам и правилам
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Члены союза ДПО</p>
               </div>
               <div class="card__info">
-                <p class="h4">"Институт профессионального образования", является членом "Союза руководителей учреждений и подразделений дополнительного профессионального образования и работодателей"</p>
+                <p class="h4">
+                  "Институт профессионального образования", является членом
+                  "Союза руководителей учреждений и подразделений
+                  дополнительного профессионального образования и работодателей"
+                </p>
               </div>
               <div class="card__btn">
                 <a href="#!" class="btn btn-alt c-alpha">Узнать подробнее -></a>
@@ -285,14 +362,20 @@
       <section id="section-programs" class="section section-programs">
         <div class="container">
           <div class="title">
-            <h2 class="h2">Программы профессиональной переподготовки <span id="dynamic-programs-title" class="c-alpha d-block">в сфере маркетинга</span></h2>
-            <p class="h4 c-muted">Просто выберите нужную программу, количество часов и сделайте заказ.
+            <h2 class="h2">
+              Программы профессиональной переподготовки
+              <span id="dynamic-programs-title" class="c-alpha d-block"
+                >в сфере маркетинга</span
+              >
+            </h2>
+            <p class="h4 c-muted">
+              Просто выберите нужную программу, количество часов и сделайте
+              заказ.
             </p>
           </div>
-          
+
           <!-- Dynamic programs -->
-          <div id="dynamic-programs" class="cards cards--half-dim">
-          </div>
+          <div id="dynamic-programs" class="cards cards--half-dim"></div>
         </div>
       </section>
 
@@ -300,19 +383,37 @@
       <section class="section section-form">
         <div class="container">
           <div class="title">
-            <h2 class="h2">Закажите любую программу в рассрочку — без процентов!</h2>
-            <p class="h4 c-alpha">Оставьте заявку и узнайте как оформить ↓</p>
+            <h2 class="h2">
+              Закажите любую программу в рассрочку — без процентов!
+            </h2>
+            <p class="h4 c-alpha">
+              Оставьте заявку и узнайте как оформить
+              <span class="mobile-only">↓</span
+              ><span class="desktop-only">→</span>
+            </p>
           </div>
           <form class="form">
             <div class="form__title">
-              <h3 class="h3">Закажите дистанционный курс профессиональной переподготовки</h3>
+              <h3 class="h3">
+                Закажите дистанционный курс профессиональной переподготовки
+              </h3>
             </div>
             <div class="form__subtitle">
-              <h3 class="h4">Закажите дистанционный курс профессиональной переподготовки</h3>
+              <h3 class="h4">
+                Закажите дистанционный курс профессиональной переподготовки
+              </h3>
             </div>
             <div class="form__input-group">
-              <input class="input-group__input input--field" type="text" placeholder="Ваш телефон">
-              <input class="input-group__input btn btn-secondary" type="submit" value="ЗАКАЗАТЬ">
+              <input
+                class="input-group__input input--field"
+                type="text"
+                placeholder="Ваш телефон"
+              />
+              <input
+                class="input-group__input btn btn-secondary"
+                type="submit"
+                value="ЗАКАЗАТЬ"
+              />
             </div>
           </form>
         </div>
@@ -328,8 +429,13 @@
                 <p class="h3">А вы знали?</p>
               </div>
               <div class="card__info">
-                <p class="h4">В нашем учебном центре нет необходимости ждать набора группы.</p>
-                <p class="h4">Начинайте в любой момент и занимайтесь по удобному для вас графику!</p>
+                <p class="h4">
+                  В нашем учебном центре нет необходимости ждать набора группы.
+                </p>
+                <p class="h4">
+                  Начинайте в любой момент и занимайтесь по удобному для вас
+                  графику!
+                </p>
               </div>
             </div>
           </div>
@@ -340,7 +446,9 @@
       <section class="section section-get-diploma">
         <div class="container">
           <div class="title">
-            <h2 class="h2">Получите диплом о профессиональной переподготовке</h2>
+            <h2 class="h2">
+              Получите диплом о профессиональной переподготовке
+            </h2>
           </div>
           <div class="content">
             <div class="muted-logo"></div>
@@ -351,8 +459,14 @@
                 <div class="diplomas__diploma diplomas__diploma-2"></div>
               </div>
             </div>
-            <p class="h4">Мы проводим обучение на основании государственной лицензии <span class="fw-bold">#039703</span>.</p>
-            <p class="h4">Наличие диплома о проф переподготовке важно для потенциального работодателя.</p>
+            <p class="h4">
+              Мы проводим обучение на основании государственной лицензии
+              <span class="fw-bold">#039703</span>.
+            </p>
+            <p class="h4">
+              Наличие диплома о проф переподготовке важно для потенциального
+              работодателя.
+            </p>
             <a href="#!" class="btn btn-secondary">Получить диплом</a>
           </div>
         </div>
@@ -367,69 +481,78 @@
 
           <div class="cards cards-alt">
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Большой опыт</p>
               </div>
               <div class="card__info">
-                <p class="h4">С момента основания нашего института, мы успешно обучили уже более 14 000 слушателей.</p>
+                <p class="h4">
+                  С момента основания нашего института, мы успешно обучили уже
+                  более 14 000 слушателей.
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Законные дипломы</p>
               </div>
               <div class="card__info">
-                <p class="h4">Мы выдаем дипломы установленного образца, которые можно проверить в государственном реестре.</p>
+                <p class="h4">
+                  Мы выдаем дипломы установленного образца, которые можно
+                  проверить в государственном реестре.
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Лучшие преподаватели</p>
               </div>
               <div class="card__info">
-                <p class="h4">Успешные бизнесмены и спикеры разработали практическую часть наших программ, основываясь на предпринимательском опыте, как на российском, так и на западном рынке.</p>
+                <p class="h4">
+                  Успешные бизнесмены и спикеры разработали практическую часть
+                  наших программ, основываясь на предпринимательском опыте, как
+                  на российском, так и на западном рынке.
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Рассрочка без переплат</p>
               </div>
               <div class="card__info">
-                <p class="h4">Вы можете получить рассрочку без переплат напрямую от нашего Института, тем самым Вы не платите проценты за кредит и не тратите время на оформление документов для банка.</p>
+                <p class="h4">
+                  Вы можете получить рассрочку без переплат напрямую от нашего
+                  Института, тем самым Вы не платите проценты за кредит и не
+                  тратите время на оформление документов для банка.
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Престижный диплом</p>
               </div>
               <div class="card__info">
-                <p class="h4">После завершения обучения, Вы получите престижные дипломы российского и европейского образца.</p>
+                <p class="h4">
+                  После завершения обучения, Вы получите престижные дипломы
+                  российского и европейского образца.
+                </p>
               </div>
             </div>
             <div class="cards__card">
-              <div class="card__icon">
-    
-              </div>
+              <div class="card__icon"></div>
               <div class="card__title">
                 <p class="h3">Поддержка куратора</p>
               </div>
               <div class="card__info">
-                <p class="h4">Мы всегда готовы проконсультировать по любым вопросам обучения, помочь с работой платформы или оформлением заказа многое другое … Обращайтесь!</p>
+                <p class="h4">
+                  Мы всегда готовы проконсультировать по любым вопросам
+                  обучения, помочь с работой платформы или оформлением заказа
+                  многое другое … Обращайтесь!
+                </p>
               </div>
             </div>
           </div>
@@ -440,15 +563,37 @@
       <section class="section section-order-now">
         <div class="container">
           <div class="title">
-            <h2 class="h2">Закажите дистанционный курс <span class="c-alpha">профессиональной переподготовки</span> прямо сейчас и получите:</h2>
+            <h2 class="h2">
+              Закажите дистанционный курс
+              <span class="c-alpha">профессиональной переподготовки</span> прямо
+              сейчас и получите:
+            </h2>
           </div>
           <div class="content">
             <ul class="list-items list-items--alt">
-              <li class="list-items__list-item">✔️<p>Индивидуальный личный кабинет с комплектом необходимых учебных материалов</p></li>
-              <li class="list-items__list-item">✔️<p>Беспроцентную рассрочку платежа от института</p></li>
-              <li class="list-items__list-item">✔️<p>Возможность закончить курсы экстерном</p></li>
-              <li class="list-items__list-item">✔️<p>Индивидуальный график обучения</p></li>
-              <li class="list-items__list-item">✔️<p>Доставку документов бесплатно</p></li>
+              <li class="list-items__list-item">
+                ✔️
+                <p>
+                  Индивидуальный личный кабинет с комплектом необходимых учебных
+                  материалов
+                </p>
+              </li>
+              <li class="list-items__list-item">
+                ✔️
+                <p>Беспроцентную рассрочку платежа от института</p>
+              </li>
+              <li class="list-items__list-item">
+                ✔️
+                <p>Возможность закончить курсы экстерном</p>
+              </li>
+              <li class="list-items__list-item">
+                ✔️
+                <p>Индивидуальный график обучения</p>
+              </li>
+              <li class="list-items__list-item">
+                ✔️
+                <p>Доставку документов бесплатно</p>
+              </li>
             </ul>
           </div>
         </div>
@@ -463,67 +608,73 @@
           <div class="content">
             <ul class="carousel">
               <li class="carousel__item item--google">
-                <img src="./img/study-with-us/google.png" alt="google">
+                <img src="./img/study-with-us/google.png" alt="google" />
               </li>
               <li class="carousel__item item--microsoft">
-                <img src="./img/study-with-us/microsoft.png" alt="microsoft">
+                <img src="./img/study-with-us/microsoft.png" alt="microsoft" />
               </li>
               <li class="carousel__item item--sberbank">
-                <img src="./img/study-with-us/sber.png" alt="sber">
+                <img src="./img/study-with-us/sber.png" alt="sber" />
               </li>
               <li class="carousel__item item--vtb">
-                <img src="./img/study-with-us/vtb.png" alt="vtb">
+                <img src="./img/study-with-us/vtb.png" alt="vtb" />
               </li>
               <li class="carousel__item item--rzhd">
-                <img src="./img/study-with-us/rzhd.png" alt="rzhd">
+                <img src="./img/study-with-us/rzhd.png" alt="rzhd" />
               </li>
               <li class="carousel__item item--rosneft">
-                <img src="./img/study-with-us/rosneft.png" alt="rosneft">
+                <img src="./img/study-with-us/rosneft.png" alt="rosneft" />
               </li>
               <li class="carousel__item item--burget-king">
-                <img src="./img/study-with-us/bk.png" alt="bk">
+                <img src="./img/study-with-us/bk.png" alt="bk" />
               </li>
               <li class="carousel__item item--lenovo">
-                <img src="./img/study-with-us/lenovo.png" alt="lenovo">
+                <img src="./img/study-with-us/lenovo.png" alt="lenovo" />
               </li>
               <li class="carousel__item item--gazprom">
-                <img src="./img/study-with-us/gazprom.png" alt="gazprom">
+                <img src="./img/study-with-us/gazprom.png" alt="gazprom" />
               </li>
               <li class="carousel__item item--mgimo">
-                <img src="./img/study-with-us/mgimo.png" alt="mgimo">
+                <img src="./img/study-with-us/mgimo.png" alt="mgimo" />
               </li>
               <li class="carousel__item item--pochoy">
-                <img src="./img/study-with-us/rocnoy.png" alt="rocnoy">
+                <img src="./img/study-with-us/rocnoy.png" alt="rocnoy" />
               </li>
               <li class="carousel__item item--sovkombank">
-                <img src="./img/study-with-us/sovkombank.png" alt="sovkombank">
+                <img
+                  src="./img/study-with-us/sovkombank.png"
+                  alt="sovkombank"
+                />
               </li>
               <li class="carousel__item item--rosseti">
-                <img src="./img/study-with-us/rosseti.png" alt="rosseti">
+                <img src="./img/study-with-us/rosseti.png" alt="rosseti" />
               </li>
               <li class="carousel__item item--cu-bitte">
-                <img src="./img/study-with-us/cu-bitte.png" alt="cu-bitte">
+                <img src="./img/study-with-us/cu-bitte.png" alt="cu-bitte" />
               </li>
               <li class="carousel__item item--home-credit-bank">
-                <img src="./img/study-with-us/homecredit.png" alt="homecreditbank">
+                <img
+                  src="./img/study-with-us/homecredit.png"
+                  alt="homecreditbank"
+                />
               </li>
               <li class="carousel__item item--tgu-derzhavina">
-                <img src="./img/study-with-us/tgu.png" alt="tgu">
+                <img src="./img/study-with-us/tgu.png" alt="tgu" />
               </li>
               <li class="carousel__item item--nia">
-                <img src="./img/study-with-us/nia.png" alt="nia">
+                <img src="./img/study-with-us/nia.png" alt="nia" />
               </li>
               <li class="carousel__item item--mgu">
-                <img src="./img/study-with-us/mgu.png" alt="mgu">
+                <img src="./img/study-with-us/mgu.png" alt="mgu" />
               </li>
               <li class="carousel__item item--migup">
-                <img src="./img/study-with-us/migup.png" alt="migup">
+                <img src="./img/study-with-us/migup.png" alt="migup" />
               </li>
               <li class="carousel__item item--tatneft">
-                <img src="./img/study-with-us/tatneft.png" alt="tatneft">
+                <img src="./img/study-with-us/tatneft.png" alt="tatneft" />
               </li>
               <li class="carousel__item item--mtdr">
-                <img src="./img/study-with-us/mth.png" alt="">
+                <img src="./img/study-with-us/mth.png" alt="" />
               </li>
             </ul>
           </div>
@@ -545,7 +696,10 @@
                   <p class="h3 c-alpha">Получайте доступ и изучайте темы</p>
                 </div>
                 <div class="step__info">
-                  <p class="h4">В личном кабинете Вы изучаете модули программы, просматриваете видео-лекции и присутствуете на вебинарах.</p>
+                  <p class="h4">
+                    В личном кабинете Вы изучаете модули программы,
+                    просматриваете видео-лекции и присутствуете на вебинарах.
+                  </p>
                 </div>
               </li>
               <li class="steps__step">
@@ -554,7 +708,12 @@
                   <p class="h3 c-alpha">Выполняйте задания</p>
                 </div>
                 <div class="step__info">
-                  <p class="h4">Изучая учебные материалы, реализована проверка усвоенных знаний посредством онлайн-тестирования. Вы обучаетесь в свободное для себя время и в том темпе, в котором Вам удобно.</p>
+                  <p class="h4">
+                    Изучая учебные материалы, реализована проверка усвоенных
+                    знаний посредством онлайн-тестирования. Вы обучаетесь в
+                    свободное для себя время и в том темпе, в котором Вам
+                    удобно.
+                  </p>
                 </div>
               </li>
               <li class="steps__step">
@@ -563,7 +722,11 @@
                   <p class="h3 c-alpha">Работайте со спикерами</p>
                 </div>
                 <div class="step__info">
-                  <p class="h4">Получаете помощь персонального куратора и общаетесь с преподавателями на вебинарах, закрепляя знания и исправляете ошибки.</p>
+                  <p class="h4">
+                    Получаете помощь персонального куратора и общаетесь с
+                    преподавателями на вебинарах, закрепляя знания и исправляете
+                    ошибки.
+                  </p>
                 </div>
               </li>
               <li class="steps__step">
@@ -579,7 +742,6 @@
           </div>
         </div>
       </section>
-
     </main>
 
     <footer id="footer">
@@ -589,30 +751,46 @@
         </div>
         <div class="content">
           <div class="contact-info">
-            <p class="h3"><span class="c-muted-3">Телефоны:</span><br />
+            <p class="h3">
+              <span class="c-muted-3">Телефоны:</span><br />
               +7 (495) 120-79-01 <br />
               +7 (800) 555-12-94
             </p>
             <p class="h3">
-              <span class="c-muted-3">E-mail:</span> <br/> info@ipo.msk.ru
+              <span class="c-muted-3">E-mail:</span> <br />
+              info@ipo.msk.ru
             </p>
             <p class="h3">
-              <span class="c-muted-3">Офис в Москве:</span> <br/>Москва, Дербеневская набережная 11 
-              </p>
+              <span class="c-muted-3">Офис в Москве:</span> <br />Москва,
+              Дербеневская набережная 11
+            </p>
             <p class="h3">
-              <span class="c-muted-3">Приемная комиссия</span> <br/> пн-пт с 9-00 до 19-00
+              <span class="c-muted-3">Приемная комиссия</span> <br />
+              пн-пт с 9-00 до 19-00
             </p>
           </div>
           <form class="form">
             <div class="form__title">
-              <h3 class="h3">Закажите дистанционный курс профессиональной переподготовки</h3>
+              <h3 class="h3">
+                Закажите дистанционный курс профессиональной переподготовки
+              </h3>
             </div>
             <div class="form__subtitle">
-              <h3 class="h4">Закажите дистанционный курс профессиональной переподготовки</h3>
+              <h3 class="h4">
+                Закажите дистанционный курс профессиональной переподготовки
+              </h3>
             </div>
             <div class="form__input-group">
-              <input class="input-group__input input--field" type="text" placeholder="Ваш телефон">
-              <input class="input-group__input btn btn-secondary" type="submit" value="ЗАКАЗАТЬ">
+              <input
+                class="input-group__input input--field"
+                type="text"
+                placeholder="Ваш телефон"
+              />
+              <input
+                class="input-group__input btn btn-secondary"
+                type="submit"
+                value="ЗАКАЗАТЬ"
+              />
             </div>
           </form>
         </div>
@@ -644,7 +822,8 @@
             </li>
 
             <li class="list-items__list-item">
-              <a id="informatics" class="h4 btn-alt">Информатика и вычислительная техника
+              <a id="informatics" class="h4 btn-alt"
+                >Информатика и вычислительная техника
               </a>
             </li>
 
@@ -664,15 +843,13 @@
       </div>
     </footer>
 
-
-      <!-- <a href="#" class="btn btn-primary">Подать заявку</a>
+    <!-- <a href="#" class="btn btn-primary">Подать заявку</a>
       <a href="#" class="btn btn-primary btn-primary--2">Подать заявку</a>
       <a href="#" class="btn btn-primary btn-primary--3">Подать заявку</a>
       <a href="#" class="btn btn-secondary">Подать заявку</a>
       <a href="#" class="btn btn-tertiary">Подать заявку</a>
       <a href="#" class="btn btn-quaternary">Подать заявку</a>
       <a href="#" class="btn btn-quaternary btn-quaternary--2">Подать заявку</a> -->
-
 
     <!-- <script src="/js/main.js" async></script> -->
     <script src="js/main.js" async></script>

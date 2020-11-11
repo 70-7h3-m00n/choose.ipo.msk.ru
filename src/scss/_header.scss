@@ -28,6 +28,31 @@ header {
   body .section-heading {
     padding-top: 0;
   }
+  .container--header {
+    width: 100%;
+  }
+  header {
+    color: $c-light;
+  }
+  .desktop-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-items {
+    display: flex;
+    margin-right: 2rem;
+  }
+  .menu-items__item {
+    display: flex;
+    margin-right: 1rem;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+    & a {
+      color: $c-light;
+    }
+  }
 }
 
 // Desktops & Laptops
