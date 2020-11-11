@@ -1,3 +1,25 @@
-.section-trust{
+.section-trust {
   background-color: $c-gamma;
+  & .cards {
+    & .cards__card {
+      &:nth-child(1) .card__icon {
+        background-image: url('../img/icons/card_1.png');
+      }
+    }
+    & .cards__card {
+      &:nth-child(2) .card__icon {
+        background-image: url('../img/icons/card_2.png');
+      }
+    }
+    & .cards__card {
+      &:nth-child(3) .card__icon {
+        background-image: url('../img/icons/card_3.png');
+      }
+    }
+    & .cards__card {
+      &:nth-child(4) .card__icon {
+        background-image: url('../img/icons/card_4.png');
+      }
+    }
+  }
 }

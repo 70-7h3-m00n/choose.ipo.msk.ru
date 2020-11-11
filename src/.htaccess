@@ -1,0 +1,2 @@
+RedirectMatch 301 ^/management/?$ https://choose.ipo.msk.ru/
+RedirectMatch 301 ^/economics/?$ https://choose.ipo.msk.ru/

@@ -41,5 +41,15 @@ footer {
       justify-content: space-between;
       align-items: center;
     }
+    & .list-items {
+      flex-wrap: wrap;
+      max-height: 250px;
+      & .list-items__list-item {
+        margin-right: 1rem;
+        &:nth-last-child(1) {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }

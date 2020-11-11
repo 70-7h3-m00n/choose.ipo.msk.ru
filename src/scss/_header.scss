@@ -33,6 +33,14 @@ header {
   }
   header {
     color: $c-light;
+    .btn-tertiary {
+      @include easeOut;
+      &:hover,
+      &:active {
+        background-color: $c-beta;
+        border: 1px solid transparent;
+      }
+    }
   }
   .desktop-menu {
     display: flex;
@@ -46,11 +54,24 @@ header {
   .menu-items__item {
     display: flex;
     margin-right: 1rem;
+    border-bottom: 1px solid transparent;
     &:nth-last-child(1) {
       margin-right: 0;
     }
     & a {
+      @include easeOut;
+      outline-color: $c-danger;
       color: $c-light;
+      &:hover,
+      &:active {
+        border-bottom: 1px solid $c-light;
+      }
+    }
+  }
+  .headings {
+    & h1 {
+      font-size: 2rem;
+      line-height: 2rem;
     }
   }
 }
@@ -59,5 +80,11 @@ header {
 @include mediaXl {
   .section-heading__content h1 {
     font-size: 2rem;
+  }
+  .headings {
+    & h1 {
+      font-size: 3rem;
+      line-height: 2.9rem;
+    }
   }
 }

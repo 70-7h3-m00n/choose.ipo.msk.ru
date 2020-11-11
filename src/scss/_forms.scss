@@ -11,12 +11,23 @@
 }
 
 .input--field {
+  @include easeOut;
   width: 100%;
   background-color: $c-muted-4;
   border: 0;
   outline-color: $c-beta;
   outline-width: 2px;
   padding: 0.875rem;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $c-muted-4;
+    opacity: 0.9;
+    &::placeholder {
+      @include easeOut;
+      color: $c-muted-3;
+    }
+  }
   &::placeholder {
     color: $c-muted;
   }

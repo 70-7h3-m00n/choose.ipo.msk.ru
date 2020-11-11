@@ -2,8 +2,8 @@
   & .btn {
     margin-top: 2.5rem;
   }
-  background-color: $c-alpha;
-  color: #fff;
+  background-color: $c-gamma;
+  // color: #fff;
 }
 
 .muted-logo {
@@ -40,21 +40,21 @@
 }
 
 .diplomas__diploma-1 {
-  background-image: url("../img/diploma/diploma-1.jpg");
+  background-image: url('../img/diploma/diploma-1.jpg');
   top: -12rem;
   left: -3.8rem; // 8rem
   z-index: 3;
 }
 
 .diplomas__diploma-2 {
-  background-image: url("../img/diploma/diploma-2.jpg");
+  background-image: url('../img/diploma/diploma-2.jpg');
   top: -4rem;
   left: -5rem; // 5rem
   z-index: 4;
 }
 
 .diplomas__diploma-3 {
-  background-image: url("../img/diploma/diploma-3.jpg");
+  background-image: url('../img/diploma/diploma-3.jpg');
   top: -8rem;
   left: -8.5rem;
   z-index: 2;

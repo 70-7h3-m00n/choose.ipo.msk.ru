@@ -3,6 +3,19 @@ import '../scss/main.scss';
 const sectionPrograms = document.getElementById('section-programs');
 const body = document.getElementById('body');
 
+const btns = document.querySelectorAll('.btn');
+const btnsArr = Array.prototype.slice.call(btns);
+console.log(btns);
+console.log(btnsArr);
+
+btns.forEach(btn => {
+  btn.addEventListener('click', showPopUpForm);
+});
+
+function showPopUpForm(){
+  
+}
+
 /////////////////////////////////////////////////////////////////////
 // States
 
@@ -85,18 +98,15 @@ const management = function (page){
   dynamicPrograms.innerHTML = `
     <div class="cards__card">
       <div class="card__title">
-        <h3 class="h3">Антикризисное управление😎</h3>
+        <h3 class="h3">Антикризисное управление</h3>
       </div>
       <!-- <div class="card__info">
         <p class="h4">Наш институт имеет бессрочную лицензию на образовательную деятельность. Нашу лицензию можно проверить на сайте Рособрнадзор</p>
       </div> -->
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
+      <div class="card__info">
+        <p class="h4 info__hours">От 256 часов</p>
+        <p class="h4 info__learn-time">От 1.5мес</p>
+        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
       </div>
       <div class="card__btn">
         <a class="btn btn-primary">Узнать подробнее</a>
@@ -107,13 +117,10 @@ const management = function (page){
       <div class="card__title">
         <h3 class="h3">Администрирование в сфере гостиничного сервиса</h3>
       </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
+      <div class="card__info">
+        <p class="h4 info__hours">От 256 часов</p>
+        <p class="h4 info__learn-time">От 1.5мес</p>
+        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
       </div>
       <div class="card__btn">
         <a class="btn btn-primary">Узнать подробнее</a>
@@ -124,13 +131,10 @@ const management = function (page){
       <div class="card__title">
         <h3 class="h3">Администрирование в спортивных клубах и фитнес-центрах</h3>
       </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
+      <div class="card__info">
+        <p class="h4 info__hours">От 256 часов</p>
+        <p class="h4 info__learn-time">От 1.5мес</p>
+        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
       </div>
       <div class="card__btn">
         <a class="btn btn-primary">Узнать подробнее</a>
@@ -141,13 +145,10 @@ const management = function (page){
       <div class="card__title">
         <h3 class="h3">Администрирование в развлекательно-досуговой организации</h3>
       </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
+      <div class="card__info">
+        <p class="h4 info__hours">От 256 часов</p>
+        <p class="h4 info__learn-time">От 1.5мес</p>
+        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
       </div>
       <div class="card__btn">
         <a class="btn btn-primary">Узнать подробнее</a>
@@ -158,13 +159,10 @@ const management = function (page){
       <div class="card__title">
         <h3 class="h3">Руководитель кадровой службы</h3>
       </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
+      <div class="card__info">
+        <p class="h4 info__hours">От 256 часов</p>
+        <p class="h4 info__learn-time">От 1.5мес</p>
+        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
       </div>
       <div class="card__btn">
         <a class="btn btn-primary">Узнать подробнее</a>

@@ -1,36 +1,70 @@
 .section-programs {
   text-align: center;
+  & .card__info {
+    & p {
+      color: $c-muted;
+    }
+  }
 }
 
 @include mediaMd {
   .section-programs {
-    & .cards {
+    text-align: left;
+    & .cards-programs {
       & .cards__card {
-        display: grid;
         flex: initial;
         width: 100%;
         margin-right: 0;
-        // max-height: 10rem;
+        display: grid;
         grid-template-areas:
-          "title half"
-          "btn btn";
-      }
-      & .card__title {
-        grid-area: title;
-        min-height: initial;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 2rem;
-      }
-      & .card__half {
-        grid-area: half;
-      }
-      & .card__btn {
-        margin-top: 1rem;
-        grid-area: btn;
+          'title btn'
+          'info btn';
+        grid-template-columns: 9fr 3fr;
+        grid-gap: 1rem 3rem;
+        & .card__title {
+          grid-area: title;
+        }
+        & .h3,
+        & .h4 {
+          margin: 0;
+        }
+        & .card__info {
+          grid-area: info;
+          color: $c-muted;
+          & p {
+            color: $c-muted-3;
+          }
+          & .info__hours::before {
+            content: '🕒 Объем программы: ';
+            font-weight: 900;
+            color: $c-muted;
+          }
+          & .info__learn-time::before {
+            content: '🕗 Длительность обучения: ';
+            font-weight: 900;
+            color: $c-muted;
+          }
+          & .info__edu-base::before {
+            content: '📚 Обучение на базе: ';
+            font-weight: 900;
+            color: $c-muted;
+          }
+
+          & .h4 {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+        & .card__btn {
+          margin-top: 0;
+          grid-area: btn;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         & .btn {
-          min-width: initial;
+          margin: 0;
         }
       }
     }

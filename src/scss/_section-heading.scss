@@ -2,14 +2,14 @@
   min-height: 100vh;
   background-color: $c-alpha;
   color: set-text-color($c-alpha);
-  background-image: url("../img/bg.jpg");
+  background-image: url('../img/bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -41,6 +41,11 @@
 }
 
 @include mediaMd {
+  .section-heading {
+    &.section {
+      padding-bottom: 0;
+    }
+  }
   .section-heading__content {
     flex-direction: row;
   }
