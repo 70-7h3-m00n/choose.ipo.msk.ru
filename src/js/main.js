@@ -57,7 +57,7 @@ const PageState = function () {
   }else if(window.location.href.includes('technology')){
     currentState = new technology(this);
   }else{
-    currentState = new management(this);
+    // currentState = new management(this);
   }
 
   this.init = function () {
@@ -80,7 +80,7 @@ const PageState = function () {
     }else if(window.location.href.includes('technology')){
       this.change(new technology());
     }else{
-      this.change(new management());
+      // this.change(new management());
     }
   };
 
