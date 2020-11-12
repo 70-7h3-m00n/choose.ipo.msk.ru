@@ -1,6 +1,30 @@
-<!-- Обьем программ 256 ч -->
-<!-- Длительность обучение от 1.5 мес -->
-<!-- Обучение на базе: высшего или среднего-образования -->
+<!-- <?php
+  // Check For Submit
+  if(filter_has_var(INPUT_POST, 'submit')){
+    // Get Form Data
+    $number = htmlspecialchars($_POST['user-number']);
+
+    // Check Required Fields
+    if(!empty($number)){
+      $toEmail = 'novailoveyou3@gmail.com';
+      $subject = 'Новая заявка с choose.ipo.msk.ru';
+      $body = 'TEST: '.$number.' YYEA';
+
+      // Email Headers
+      $headers = "MIME-Version: 1.0" . "\r\n";
+      $headers .= "Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+      if(mail($toEmail, $subject, $body, $headers)){
+        echo 'success';
+      }else{
+        echo 'error';
+      }
+
+    }else{
+      echo 'error';
+    }
+  }
+?> -->
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -102,7 +126,7 @@
 
           <div class="desktop-menu__cta">
             <!-- <p class="h4">8 800 333 92 59</p> -->
-            <a href="#!" class="btn btn-tertiary">Оформить заявку</a>
+            <a href="#!" class="btn btn-tertiary js-btn-popup">Оформить заявку</a>
           </div>
         </div>
       </div>
@@ -133,7 +157,7 @@
                 </li>
               </ul>
             </div>
-            <a href="#!" class="btn btn-secondary mobile-only">Подать заявку</a>
+            <a href="#!" class="btn btn-secondary mobile-only js-btn-popup">Подать заявку</a>
 
             <!-- Desktop only -->
             <form class="form desktop-only">
@@ -360,9 +384,9 @@
                   дополнительного профессионального образования и работодателей"
                 </p>
               </div>
-              <div class="card__btn">
+              <!-- <div class="card__btn">
                 <a href="#!" class="btn btn-alt c-alpha">Узнать подробнее -></a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -477,7 +501,7 @@
               Наличие диплома о проф переподготовке важно для потенциального
               работодателя.
             </p>
-            <a href="#!" class="btn btn-secondary">Получить диплом</a>
+            <a href="#!" class="btn btn-secondary js-btn-popup">Получить диплом</a>
           </div>
         </div>
       </section>
@@ -853,8 +877,9 @@
       </div>
     </footer>
 
-    <section class="module">
-      <form class="form">
+    <section id="module-1" class="module">
+      <!-- <form class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>"> -->
+      <form class="form" action="">
         <div class="form__title">
           <h3 class="h3">
             Закажите дистанционный курс профессиональной переподготовки
@@ -867,12 +892,15 @@
         </div>
         <div class="form__input-group">
           <input
+            id="popup-form-user-number"
+            name="user-number"
             class="input-group__input input--field"
             type="text"
             placeholder="Ваш телефон"
           />
           <input
             class="input-group__input btn btn-secondary"
+            name="submit"
             type="submit"
             value="ЗАКАЗАТЬ"
           />

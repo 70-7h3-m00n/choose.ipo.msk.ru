@@ -21,7 +21,17 @@
           'info btn';
         grid-template-columns: 9fr 3fr;
         grid-gap: 1rem 3rem;
+
+        &:hover,
+        &:active,
+        &:focus {
+          & .card__title {
+            color: $c-alpha;
+          }
+        }
+
         & .card__title {
+          @include easeOut;
           grid-area: title;
         }
         & .h3,
@@ -46,6 +56,11 @@
           }
           & .info__edu-base::before {
             content: '📚 Обучение на базе: ';
+            font-weight: 900;
+            color: $c-muted;
+          }
+          & .info__price::before {
+            content: '​💳​ Цена: ';
             font-weight: 900;
             color: $c-muted;
           }

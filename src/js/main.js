@@ -3,19 +3,6 @@ import '../scss/main.scss';
 const sectionPrograms = document.getElementById('section-programs');
 const body = document.getElementById('body');
 
-const btns = document.querySelectorAll('.btn');
-const btnsArr = Array.prototype.slice.call(btns);
-console.log(btns);
-console.log(btnsArr);
-
-btns.forEach(btn => {
-  btn.addEventListener('click', showPopUpForm);
-});
-
-function showPopUpForm(){
-  
-}
-
 /////////////////////////////////////////////////////////////////////
 // States
 
@@ -89,89 +76,92 @@ const PageState = function () {
   };
 };
 
+// Vars for programs
+function createCard(cardTitle = '', cardInfo = ''){
+  return `
+          <div class="cards__card">
+            <div class="card__title">
+              <h3 class="h3">${cardTitle}</h3>
+            </div>
+            ${cardInfo}
+            <div class="card__btn">
+              <a class="btn btn-primary js-btn-popup">Узнать подробнее</a>
+            </div>
+          </div>
+        `
+}
+
+function scrollIntoView(el = ''){
+
+  if(el !== ''){
+    el.scrollIntoView(true);
+    el.scrollTop;
+    // body.scrollIntoView({
+    //   behavior: 'auto'
+    // });
+  }else{
+    return;
+  }
+}
+
+const cardInfo = `
+              <div class="card__info">
+                <p class="h4 info__hours">От 256 часов</p>
+                <p class="h4 info__learn-time">От 1.5мес</p>
+                <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
+              </div>
+              `;
+
 // Management
 const management = function (page){
   window.history.pushState({'page_id': 1}, '', '/management');
 
   headingTitle.innerHTML = 'в сфере менеджмента';
   dynamicProgramsTitle.innerHTML = 'в сфере менеджмента';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Антикризисное управление</h3>
-      </div>
-      <!-- <div class="card__info">
-        <p class="h4">Наш институт имеет бессрочную лицензию на образовательную деятельность. Нашу лицензию можно проверить на сайте Рособрнадзор</p>
-      </div> -->
-      <div class="card__info">
-        <p class="h4 info__hours">От 256 часов</p>
-        <p class="h4 info__learn-time">От 1.5мес</p>
-        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Администрирование в сфере гостиничного сервиса</h3>
-      </div>
-      <div class="card__info">
-        <p class="h4 info__hours">От 256 часов</p>
-        <p class="h4 info__learn-time">От 1.5мес</p>
-        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
+  dynamicPrograms.innerHTML = createCard('Антикризисное управление', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Администрирование в сфере гостиничного сервиса', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Администрирование в спортивных клубах и фитнес-центрах', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Администрирование в развлекательно-досуговой организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Руководитель кадровой службы', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Руководитель театрального коллектива', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Руководитель хореографического коллектива', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджер по развитию персонала', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управление персоналом', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджер по подбору и адаптации персонала', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Специалист по подбору и адаптации персонала', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджер по оценке персонала', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Директор по персоналу', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Специалист по кадровому делопроизводству', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Специалист по кадровому аудиту', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджер по оплате и нормированию труда', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управление проектами', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управление инновационными проектами', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управление качеством', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стратегический менеджмент', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в образовании в условиях реализации ФГОС', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере гостиничного сервиса', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере общественного питания', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере развлекательно-досуговых услуг', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере туризма и сервиса', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере физической культуры и спорта', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Документоведение и архивоведение', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Финансовый менеджмент', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организационное и документационное обеспечение управления', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Делопроизводство в государственных и муниципальных учреждениях', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в спортивных учреждениях', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджмент в учреждениях культуры', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджер здравоохранения', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Менеджер образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Логистика общая', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Складская логистика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Транспортная логистика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Закупочная логистика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Государственное и муниципальное управление', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управление развитием региона', cardInfo);
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Администрирование в спортивных клубах и фитнес-центрах</h3>
-      </div>
-      <div class="card__info">
-        <p class="h4 info__hours">От 256 часов</p>
-        <p class="h4 info__learn-time">От 1.5мес</p>
-        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Администрирование в развлекательно-досуговой организации</h3>
-      </div>
-      <div class="card__info">
-        <p class="h4 info__hours">От 256 часов</p>
-        <p class="h4 info__learn-time">От 1.5мес</p>
-        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Руководитель кадровой службы</h3>
-      </div>
-      <div class="card__info">
-        <p class="h4 info__hours">От 256 часов</p>
-        <p class="h4 info__learn-time">От 1.5мес</p>
-        <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Economics
@@ -180,95 +170,32 @@ const economics = function (page){
 
   headingTitle.innerHTML = 'в сфере экономики';
   dynamicProgramsTitle.innerHTML = 'в сфере экономики';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Бухгалтерский учет, анализ и аудит</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Бухгалтерский и налоговый учет в организациях малого бизнеса и ИП</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
+  dynamicPrograms.innerHTML = createCard('Бухгалтерский учет, анализ и аудит', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский и налоговый учет в организациях малого бизнеса и ИП', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский учет в некоммерческих организациях', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский учет и налогообложение', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Международные отношения', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Ведение бухгалтерского учета в бюджетных организациях', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский учёт и калькуляция на предприятиях общественного питания', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Налоги и налогообложение', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Экономика и управление на предприятии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация внутреннего контроля на предприятии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управленческий учет и анализ организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управленческий учет и финансовое планирование в организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Анализ и диагностика финансово-хозяйственной деятельности организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Финансы и кредит', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Финансовый анализ', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Внутренний аудит', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Страхование', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Экономическая безопасность', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Внешнеэкономическая деятельность', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Рынок ценных бумаг', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Региональная экономика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Экономист по оплате и нормированию труда', cardInfo);
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Бухгалтерский учет в некоммерческих организациях</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Бухгалтерский учет и налогообложение</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Международные отношения</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Pedagogy 
@@ -277,95 +204,49 @@ const pedagogy  = function (page){
 
   headingTitle.innerHTML = 'в сфере педагогики';
   dynamicProgramsTitle.innerHTML = 'в сфере педагогики';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Педагог высшего образования</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Педагог обществознания</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
+  dynamicPrograms.innerHTML = createCard('Педагог высшего образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог обществознания', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог истории', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Логопедия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Специальное (дефектологическое) образование', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог основ безопасности жизнедеятельности', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог среднего профессионального образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог экологии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог-психолог', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогика и психология образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психолого-педагогическое сопровождение образовательного процесса', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагог высшей школы', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогика раннего развития', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогическая деятельность в области воспитания и социализации личности', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогика и методика дошкольного образования с дополнительной подготовкой в области предшкольной подготовки', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика и психология в условиях реализации ФГОС ДО', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Общая педагогика: теория и методика обучения в рамках реализации ФГОС', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогика и методика начального образования в рамках реализации ФГОС', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогика и психология дошкольного образования в условиях реализации ФГОС ДО', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Подготовка детей к школьному обучению в дошкольной образовательной организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Физическая культура в дошкольных образовательных организациях в рамках реализации ФГОС (базовая)', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Физическая культура в дошкольных образовательных организациях в рамках реализации ФГОС', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Физическая культура в образовательных организациях в рамках реализации ФГОС (базовая)', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Физическая культура в образовательных организациях в рамках реализации ФГОС', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Физкультурно-оздоровительная деятельность по плаванию с детьми дошкольного возраста', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Библиотечно-педагогическая деятельность', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Инструктор по детскому фитнесу', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Тренер-преподаватель по адаптивной физической культуре', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педагогика и методика начального образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика и психология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика, воспитатель ДОО', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Методист дошкольного образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Методическое обеспечение среднего профессионального образования', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Методология и технология педагогической деятельности', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Музыкальный руководитель в дошкольной образовательной организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Музыкальное воспитание и эстетическое развитие детей в дошкольной образовательной организации', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация и проведение практических занятий по адаптивной физической культуре', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация и проведение тренировочного процесса', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация и содержание логопедической работы', cardInfo);
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Педагог истории</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Логопедия</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Специальное (дефектологическое) образование</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Psychology
@@ -375,95 +256,35 @@ const psychology = function (page){
 
   headingTitle.innerHTML = 'в сфере психологии';
   dynamicProgramsTitle.innerHTML = 'в сфере психологии';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Психология</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Психология: Очно-заочная (вечерняя) форма обучения</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
+  dynamicPrograms.innerHTML = createCard('Психология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психология: Очно-заочная (вечерняя) форма обучения', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Клиническая психология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психология личности', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Социальная психология в бизнесе', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Социальная психология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психология служебной деятельности', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Спортивная психология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психолог-тренер', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Нейропсихология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Акмеология и психология развития', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Школьный психолог', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Детская психология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психология семьи с основами психотерапии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психология дошкольного образования в условиях реализации ФГОС ДО', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Социальная работа', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Социальный педагог', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Руководитель организации социального обслуживания', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация социального обслуживания населения', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Деятельность органов опеки и попечительства в отношении несовершеннолетних', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Политология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Религиоведение', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Культурология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Социология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Философия', cardInfo);
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Клиническая психология</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Психология личности</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Социальная психология в бизнесе</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Healthcare
@@ -472,95 +293,58 @@ const healthcare = function (page){
 
   headingTitle.innerHTML = 'в сфере медицины';
   dynamicProgramsTitle.innerHTML = 'в сфере медицины';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Клиническая фармакология</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Психиатрия</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
+  dynamicPrograms.innerHTML = createCard('Клиническая фармакология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психиатрия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Психотерапия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринский уход в физиотерапевтической практике', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Акушерское дело', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринское дело', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация сестринского дела', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в косметологии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в педиатрии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в онкологии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в терапии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в хирургии', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Лабораторное дело', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Операционное дело', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Общая практика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Медицинская сестра врача общей практики', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Медико-социальная помощь', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация здравоохранения и общественное здоровье', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Медицинская статистика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Судебно-медицинская экспертиза(СМП)', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Судебно-медицинская экспертиза', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Диетология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Наркология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Онкология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Остеопатия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Ревматология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Рентгенология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Паразитология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стоматология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стоматология общей практики', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стоматология детская', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стоматология хирургическая', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стоматология ортопедическая', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Стоматология терапевтическая', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Педиатрия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Патологическая анатомия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сексология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Фтизиатрия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Гистология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Эпидемиология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Эндоскопия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Бактериология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Фельдшер', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Дезинфекционное дело', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Травматология и ортопедия', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Анестезиология и реаниматология', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Гигиеническое воспитание', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Лечебная физкультура и спортивная медицина', cardInfo);
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Психотерапия</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Сестринский уход в физиотерапевтической практике</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Акушерское дело</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Informatics
@@ -569,95 +353,16 @@ const informatics = function (page){
 
   headingTitle.innerHTML = 'в сфере информатики';
   dynamicProgramsTitle.innerHTML = 'в сфере информатики';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Информатика и вычислительная техника</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Вычислительные машины, комплексы, системы и сети</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Технология разработки программного обеспечения</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Технология разработки мобильного приложения</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Программное обеспечение средств вычислительной техники и автоматизированных систем</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  dynamicPrograms.innerHTML = createCard('Информатика и вычислительная техника', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Вычислительные машины, комплексы, системы и сети', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Технология разработки программного обеспечения', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Технология разработки мобильного приложения', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Программное обеспечение средств вычислительной техники и автоматизированных систем', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Информационные управляющие комплексы систем безопасности объектов', cardInfo);
+  
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Jurisprudence
@@ -666,95 +371,15 @@ const jurisprudence = function (page){
 
   headingTitle.innerHTML = 'в сфере юриспруденции';
   dynamicProgramsTitle.innerHTML = 'в сфере юриспруденции';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Юриспруденция</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Сделки с недвижимостью</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Специалист договорного отдела</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Юриспруденция: гражданско-правовой профиль</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Правовое сопровождение социального обеспечения граждан Р.Ф.</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  dynamicPrograms.innerHTML = createCard('Юриспруденция', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Сделки с недвижимостью', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Специалист договорного отдела', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Юриспруденция: гражданско-правовой профиль', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Правовое сопровождение социального обеспечения граждан Р.Ф.', cardInfo);
+  
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Marketing 
@@ -763,129 +388,17 @@ const marketing = function (page){
 
   headingTitle.innerHTML = 'в сфере маркетинга';
   dynamicProgramsTitle.innerHTML = 'в сфере маркетинга';
-  dynamicPrograms.innerHTML = `
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Менеджер по маркетингу</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
 
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Интернет-маркетинг</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Директор по маркетингу</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Реклама и PR (Рссо)</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">PR менеджер</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Основы брендинга и рекламы</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-
-    <div class="cards__card">
-      <div class="card__title">
-        <h3 class="h3">Журналистика</h3>
-      </div>
-      <div class="card__half">
-        <div class="half__left">
-          <p class="h4">От 246 часов</p>
-        </div>
-        <div class="half__right">
-          <p class="h4">От 14000руб</p>
-        </div>
-      </div>
-      <div class="card__btn">
-        <a class="btn btn-primary">Узнать подробнее</a>
-      </div>
-    </div>
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+  dynamicPrograms.innerHTML = createCard('Менеджер по маркетингу', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Интернет-маркетинг', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Директор по маркетингу', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Реклама и PR (Рссо)', cardInfo);
+  dynamicPrograms.innerHTML += createCard('PR менеджер', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Основы брендинга и рекламы', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Журналистика', cardInfo);
+  
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 // Technology
@@ -894,12 +407,23 @@ const technology = function (page){
 
   headingTitle.innerHTML = 'в технической сфере';
   dynamicProgramsTitle.innerHTML = 'в технической сфере';
-  dynamicPrograms.innerHTML = `
-    здесь будут программы технической сферы
-  `;
-  body.scrollIntoView({
-    behavior: 'auto'
-  });
+
+  dynamicPrograms.innerHTML = createCard('Промышленное и гражданское строительство', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Проектирование зданий и сооружений', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Эксплуатация зданий и сооружений', cardInfo);
+  dynamicPrograms.innerHTML += createCard(' Электроэнергетические системы и сети', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Электрооборудование и электрохозяйство предприятий, организаций и учреждений', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Теплоэнергетика и теплотехника', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Промышленная теплоэнергетика', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Охрана труда', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Организация системы управления охраной труда', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Охрана труда и техносферная безопасность', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Управление охраной труда и обеспечение безопасности на рабочих местах', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Техносферная безопасность', cardInfo);
+  dynamicPrograms.innerHTML += createCard('Технология транспортных процессов в области организации и безопасности дорожного движения', cardInfo);
+
+  scrollIntoView(body);
+  addListenersToBtns();
 }
 
 
@@ -975,3 +499,29 @@ technologyLink.addEventListener('click', (e) => {
 
 // /States
 /////////////////////////////////////////////////////////////////////
+
+function addListenersToBtns(){
+  const btns = document.querySelectorAll('.js-btn-popup');
+  const btnsArr = Array.prototype.slice.call(btns);
+  
+  btnsArr.forEach(btn => {
+    btn.addEventListener('click', showPopUpForm);
+  });
+  
+}
+
+function showPopUpForm(){
+  const formPopUp = document.getElementById('module-1');
+  const userNumber = document.getElementById('popup-form-user-number');
+  formPopUp.classList.add('show');
+  userNumber.focus();
+
+  document.body.addEventListener('click', closePopUpForm);
+}
+
+function closePopUpForm(e){
+  const formPopUp = document.getElementById('module-1');
+  if(e.target === formPopUp && formPopUp.contains(e.target)){
+    formPopUp.classList.remove('show');
+  }
+}
