@@ -32,6 +32,7 @@ header {
     width: 100%;
   }
   header {
+    min-height: 7rem;
     color: $c-light;
     .btn-tertiary {
       @include easeOut;
@@ -42,14 +43,39 @@ header {
       }
     }
   }
-  .desktop-menu {
+  .logo-group {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 16rem;
+  }
+  .logo-group__text {
+    margin-left: 1rem;
+  }
+
+  .desktop-menu__header-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .header-group__number {
+    margin-right: 1.5rem;
+  }
+
+  .header-logo {
+    min-width: 4.5rem;
+  }
+  .desktop-menu {
+    width: 100%;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
   }
   .menu-items {
     display: flex;
-    margin-right: 2rem;
+    margin-left: 2rem;
+    padding: 0;
   }
   .menu-items__item {
     display: flex;

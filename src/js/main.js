@@ -44,7 +44,7 @@ const PageState = function () {
   }else if(window.location.href.includes('technology')){
     currentState = new technology(this);
   }else{
-    // currentState = new management(this);
+    currentState = new management(this);
   }
 
   this.init = function () {
@@ -67,7 +67,7 @@ const PageState = function () {
     }else if(window.location.href.includes('technology')){
       this.change(new technology());
     }else{
-      // this.change(new management());
+      this.change(new management());
     }
   };
 
@@ -525,3 +525,33 @@ function closePopUpForm(e){
     formPopUp.classList.remove('show');
   }
 }
+
+// Display only 5 cards at the time
+function limitCards(){
+  const cards = document.querySelectorAll('#dynamic-programs .cards__card');
+  const cardsArr = Array.prototype.slice.call(cards);
+  const loadMoreBtn = document.getElementById('load-more-cards__btn');
+  let cardsTotal = 0;
+
+  cardsArr.forEach((card) => {
+    if(cardsTotal >= 5){
+      return;
+    }else{
+      card.classList.add('show');
+      cardsTotal++;
+    }
+  })
+  
+  loadMoreBtn.addEventListener('click', () => {
+    cardsTotal = cardsTotal+5;
+    cardsArr.forEach((card, index) => {
+      if(index >= cardsTotal){
+        return;
+      }else{
+        card.classList.add('show');
+      }
+    })
+  })
+}
+
+limitCards();

@@ -53,7 +53,12 @@
   <body id="body">
     <header id="header">
       <div class="container container--header">
-        <img src="img/logo.png" alt="ИПО Логотип" />
+        <div class="logo-group">
+          <img class="header-logo" src="img/logo.png" alt="ИПО Логотип" />
+          <div class="desktop-only logo-group__text">
+            Инстритут Профессионального образования
+          </div>
+        </div>
 
         <div class="mobile-menu menu__menu-mobile">
           <input
@@ -77,7 +82,7 @@
                   <p>Номер приемной комиссии:</p>
                 </div>
                 <div class="number-wrapper__number">
-                  <p>+7 (499) 648-62-26</p>
+                  <p>+7 (499) 520-00-69</p>
                 </div>
                 <div class="number-wrapper__btn">
                   <a
@@ -109,24 +114,32 @@
         </div>
 
         <div class="desktop-menu desktop-only">
-          <ul class="menu-items">
-            <li class="menu-items__item">
-              <a href="#section-about">О центре</a>
-            </li>
-            <li class="menu-items__item">
-              <a href="#section-programs">Программы</a>
-            </li>
-            <li class="menu-items__item">
-              <a href="#section-reasons">Преимущества</a>
-            </li>
-            <li class="menu-items__item">
-              <a href="#footer">Контакты</a>
-            </li>
-          </ul>
-
-          <div class="desktop-menu__cta">
-            <!-- <p class="h4">8 800 333 92 59</p> -->
-            <a href="#!" class="btn btn-tertiary js-btn-popup">Оформить заявку</a>
+          <div class="desktop-menu__header-group">
+            <div class="header-group__number">
+              <p class="h4">+7 (499) 520-00-69</p>
+            </div>
+            <div class="header-group__cta">
+              <!-- <p class="h4">8 800 333 92 59</p> -->
+              <a href="#!" class="btn btn-tertiary js-btn-popup"
+                >Оформить заявку</a
+              >
+            </div>
+          </div>
+          <div class="desktop-menu__header-group">
+            <ul class="menu-items">
+              <li class="menu-items__item">
+                <a href="#section-about">О центре</a>
+              </li>
+              <li class="menu-items__item">
+                <a href="#section-programs">Программы</a>
+              </li>
+              <li class="menu-items__item">
+                <a href="#section-reasons">Преимущества</a>
+              </li>
+              <li class="menu-items__item">
+                <a href="#footer">Контакты</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -157,10 +170,16 @@
                 </li>
               </ul>
             </div>
-            <a href="#!" class="btn btn-secondary mobile-only js-btn-popup">Подать заявку</a>
+            <a href="#!" class="btn btn-secondary mobile-only js-btn-popup"
+              >Подать заявку</a
+            >
 
             <!-- Desktop only -->
-            <form class="form desktop-only">
+            <form
+              class="form desktop-only"
+              action="https://formsubmit.co/info@ipo.msk.ru"
+              method="POST"
+            >
               <div class="form__title">
                 <h3 class="h3">
                   Закажите дистанционный курс профессиональной переподготовки
@@ -177,6 +196,19 @@
                   type="text"
                   placeholder="Ваш телефон"
                 />
+
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://choose.ipo.msk.ru/"
+                />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Новая заявка с ИПО лендинга"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+
                 <input
                   class="input-group__input btn btn-secondary"
                   type="submit"
@@ -194,7 +226,7 @@
           <div class="cards cards-alt-2 cards--transparent">
             <div class="cards__card">
               <div class="card__icon">
-                <img src="img/svg/clock.svg" alt="Быстрая доставка">
+                <img src="img/svg/clock.svg" alt="Быстрая доставка" />
               </div>
               <div class="card__title">
                 <p class="h4">
@@ -204,7 +236,7 @@
             </div>
             <div class="cards__card">
               <div class="card__icon">
-                <img src="img/svg/award.svg" alt="Быстрая доставка">
+                <img src="img/svg/award.svg" alt="Быстрая доставка" />
               </div>
               <div class="card__title">
                 <p class="h4">
@@ -215,7 +247,7 @@
             </div>
             <div class="cards__card">
               <div class="card__icon">
-                <img src="img/svg/cash.svg" alt="Быстрая доставка">
+                <img src="img/svg/cash.svg" alt="Быстрая доставка" />
               </div>
               <div class="card__title">
                 <p class="h4">
@@ -409,7 +441,17 @@
           </div>
 
           <!-- Dynamic programs -->
-          <div id="dynamic-programs" class="cards cards-programs cards--half-dim"></div>
+          <div
+            id="dynamic-programs"
+            class="cards cards-programs cards--half-dim"
+          ></div>
+          <div class="load-more-cards">
+            <a
+              id="load-more-cards__btn"
+              class="load-more-cards__btn btn btn-primary btn-primary--2"
+              >Ещё</a
+            >
+          </div>
         </div>
       </section>
 
@@ -426,7 +468,11 @@
               ><span class="desktop-only">→</span>
             </p>
           </div>
-          <form class="form">
+          <form
+            class="form"
+            action="https://formsubmit.co/info@ipo.msk.ru"
+            method="POST"
+          >
             <div class="form__title">
               <h3 class="h3">
                 Закажите дистанционный курс профессиональной переподготовки
@@ -443,6 +489,19 @@
                 type="text"
                 placeholder="Ваш телефон"
               />
+
+              <input
+                type="hidden"
+                name="_next"
+                value="https://choose.ipo.msk.ru/"
+              />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Новая заявка с ИПО лендинга"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+
               <input
                 class="input-group__input btn btn-secondary"
                 type="submit"
@@ -501,13 +560,18 @@
               Наличие диплома о проф переподготовке важно для потенциального
               работодателя.
             </p>
-            <a href="#!" class="btn btn-secondary js-btn-popup">Получить диплом</a>
+            <a href="#!" class="btn btn-secondary js-btn-popup"
+              >Получить диплом</a
+            >
           </div>
         </div>
       </section>
 
       <!-- Section reasons -->
-      <section id="section-reasons" class="section section-reasons cards--transparent">
+      <section
+        id="section-reasons"
+        class="section section-reasons cards--transparent"
+      >
         <div class="container">
           <div class="title">
             <h2 class="h2">Почему выбирают наш учебный центр</h2>
@@ -803,7 +867,11 @@
               пн-пт с 9-00 до 19-00
             </p>
           </div>
-          <form class="form">
+          <form
+            class="form"
+            action="https://formsubmit.co/info@ipo.msk.ru"
+            method="POST"
+          >
             <div class="form__title">
               <h3 class="h3">
                 Закажите дистанционный курс профессиональной переподготовки
@@ -820,6 +888,19 @@
                 type="text"
                 placeholder="Ваш телефон"
               />
+
+              <input
+                type="hidden"
+                name="_next"
+                value="https://choose.ipo.msk.ru/"
+              />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Новая заявка с ИПО лендинга"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+
               <input
                 class="input-group__input btn btn-secondary"
                 type="submit"
@@ -878,8 +959,11 @@
     </footer>
 
     <section id="module-1" class="module">
-      <!-- <form class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>"> -->
-      <form class="form" action="">
+      <form
+        class="form"
+        action="https://formsubmit.co/info@ipo.msk.ru"
+        method="POST"
+      >
         <div class="form__title">
           <h3 class="h3">
             Закажите дистанционный курс профессиональной переподготовки
@@ -898,6 +982,19 @@
             type="text"
             placeholder="Ваш телефон"
           />
+
+          <input
+            type="hidden"
+            name="_next"
+            value="https://choose.ipo.msk.ru/"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Новая заявка с ИПО лендинга"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+
           <input
             class="input-group__input btn btn-secondary"
             name="submit"

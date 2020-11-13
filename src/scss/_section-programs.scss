@@ -5,6 +5,23 @@
       color: $c-muted;
     }
   }
+  & .container {
+    & .cards-programs {
+      & .cards__card {
+        display: none;
+        &.show {
+          display: grid;
+        }
+      }
+    }
+  }
+}
+
+.load-more-cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @include mediaMd {
@@ -17,8 +34,8 @@
         margin-right: 0;
         display: grid;
         grid-template-areas:
-          'title btn'
-          'info btn';
+          "title btn"
+          "info btn";
         grid-template-columns: 9fr 3fr;
         grid-gap: 1rem 3rem;
 
@@ -45,22 +62,22 @@
             color: $c-muted-3;
           }
           & .info__hours::before {
-            content: '🕒 Объем программы: ';
+            content: "🕒 Объем программы: ";
             font-weight: 900;
             color: $c-muted;
           }
           & .info__learn-time::before {
-            content: '🕗 Длительность обучения: ';
+            content: "🕗 Длительность обучения: ";
             font-weight: 900;
             color: $c-muted;
           }
           & .info__edu-base::before {
-            content: '📚 Обучение на базе: ';
+            content: "📚 Обучение на базе: ";
             font-weight: 900;
             color: $c-muted;
           }
           & .info__price::before {
-            content: '​💳​ Цена: ';
+            content: "​💳​ Цена: ";
             font-weight: 900;
             color: $c-muted;
           }
