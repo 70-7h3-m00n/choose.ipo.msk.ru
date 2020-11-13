@@ -1,6 +1,8 @@
 .section-programs {
   text-align: center;
   & .card__info {
+    text-align: left;
+    padding-left: 7%;
     & p {
       color: $c-muted;
     }
@@ -14,29 +16,13 @@
       & .card__info {
         color: $c-muted;
         & p {
+          display: flex;
           color: $c-muted-3;
+          & .align-helper {
+            margin-left: 0.6rem;
+          }
         }
-        & .info__hours::before {
-          content: '🕒 Объем программы: \A';
-          white-space: pre-wrap;
-          font-weight: 900;
-          color: $c-muted;
-        }
-        & .info__learn-time::before {
-          content: '🕗 Длительность обучения: \A';
-          white-space: pre-wrap;
-          font-weight: 900;
-          color: $c-muted;
-        }
-        & .info__edu-base::before {
-          content: '📚 Обучение на базе: \A';
-          white-space: pre-wrap;
-          font-weight: 900;
-          color: $c-muted;
-        }
-        & .info__price::before {
-          content: '​💳​ Цена: ';
-          white-space: pre-wrap;
+        .card-info-icon {
           font-weight: 900;
           color: $c-muted;
         }
@@ -89,28 +75,12 @@
         & .card__info {
           grid-area: info;
           color: $c-muted;
+          padding-left: 0;
           & p {
             color: $c-muted-3;
-          }
-          & .info__hours::before {
-            content: '🕒 Объем программы: ';
-            font-weight: 900;
-            color: $c-muted;
-          }
-          & .info__learn-time::before {
-            content: '🕗 Длительность обучения: ';
-            font-weight: 900;
-            color: $c-muted;
-          }
-          & .info__edu-base::before {
-            content: '📚 Обучение на базе: ';
-            font-weight: 900;
-            color: $c-muted;
-          }
-          & .info__price::before {
-            content: '​💳​ Цена: ';
-            font-weight: 900;
-            color: $c-muted;
+            & .align-helper {
+              margin-left: 0.3rem;
+            }
           }
 
           & .h4 {

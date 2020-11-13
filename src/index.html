@@ -42,6 +42,22 @@
     <link rel="shortcut icon" href="/img/favicon.ico" type="/image/x-icon" />
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
     <link rel="manifest" type="style/css" href="/manifest.webmanifest" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(69375577, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/69375577" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" /> -->
     <!-- <link rel="stylesheet" href="/css/main.css" /> -->
@@ -224,7 +240,9 @@
 
                 <input
                   class="input-group__input btn btn-secondary"
+                  name="submit"
                   type="submit"
+                  onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
                   value="ЗАКАЗАТЬ"
                 />
               </div>
@@ -536,6 +554,8 @@
               <input
                 class="input-group__input btn btn-secondary"
                 type="submit"
+                name="submit"
+                onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
                 value="ЗАКАЗАТЬ"
               />
             </div>
@@ -953,6 +973,8 @@
               <input
                 class="input-group__input btn btn-secondary"
                 type="submit"
+                name="submit"
+                onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
                 value="ЗАКАЗАТЬ"
               />
             </div>
@@ -1062,6 +1084,7 @@
             class="input-group__input btn btn-secondary"
             name="submit"
             type="submit"
+            onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
             value="ЗАКАЗАТЬ"
           />
         </div>

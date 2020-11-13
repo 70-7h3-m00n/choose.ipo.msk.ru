@@ -104,11 +104,12 @@ function scrollIntoView(el = ''){
   }
 }
 
+// 💳​ Цена: 
 const cardInfo = `
               <div class="card__info">
-                <p class="h4 info__hours">От 256 часов</p>
-                <p class="h4 info__learn-time">От 1.5мес</p>
-                <p class="h4 info__edu-base">Высшего или средне-профессионального образования</p>
+                <p class="h4 info__hours"><span>🕒</span> <span class="align-helper"><span class="card-info-icon">Объем программы:</span> От 256 часов</span></p>
+                <p class="h4 info__learn-time"><span>🕗</span> <span class="align-helper"><span class="card-info-icon">Длительность обучения:</span> От 1.5мес</span></p>
+                <p class="h4 info__edu-base"><span>📚</span> <span class="align-helper"><span class="card-info-icon">Обучение на базе:</span> Высшего или средне-профессионального образования</span></p>
               </div>
               `;
 
@@ -634,3 +635,13 @@ function showNameInput(){
 }
 
 showNameInput();
+
+// Prevent smooth scroll
+// source: http://stackoverflow.com/a/35611393/992504
+document.getElementsByTagName("body")[0].addEventListener("wheel",function (event) {
+  // exception for ACE Editor, JS text editor used by sites like GitHub
+  if (event.target.classList.contains('ace_content')) {
+    return;
+  }
+  event.stopPropagation();
+}, true);
