@@ -5,12 +5,40 @@
       color: $c-muted;
     }
   }
-  & .container {
-    & .cards-programs {
-      & .cards__card {
-        display: none;
-        &.show {
-          display: grid;
+  & .cards-programs {
+    & .cards__card {
+      display: none;
+      &.show {
+        display: block;
+      }
+      & .card__info {
+        color: $c-muted;
+        & p {
+          color: $c-muted-3;
+        }
+        & .info__hours::before {
+          content: '🕒 Объем программы: \A';
+          white-space: pre-wrap;
+          font-weight: 900;
+          color: $c-muted;
+        }
+        & .info__learn-time::before {
+          content: '🕗 Длительность обучения: \A';
+          white-space: pre-wrap;
+          font-weight: 900;
+          color: $c-muted;
+        }
+        & .info__edu-base::before {
+          content: '📚 Обучение на базе: \A';
+          white-space: pre-wrap;
+          font-weight: 900;
+          color: $c-muted;
+        }
+        & .info__price::before {
+          content: '​💳​ Цена: ';
+          white-space: pre-wrap;
+          font-weight: 900;
+          color: $c-muted;
         }
       }
     }
@@ -32,10 +60,13 @@
         flex: initial;
         width: 100%;
         margin-right: 0;
-        display: grid;
+        display: none;
+        &.show {
+          display: grid;
+        }
         grid-template-areas:
-          "title btn"
-          "info btn";
+          'title btn'
+          'info btn';
         grid-template-columns: 9fr 3fr;
         grid-gap: 1rem 3rem;
 
@@ -62,22 +93,22 @@
             color: $c-muted-3;
           }
           & .info__hours::before {
-            content: "🕒 Объем программы: ";
+            content: '🕒 Объем программы: ';
             font-weight: 900;
             color: $c-muted;
           }
           & .info__learn-time::before {
-            content: "🕗 Длительность обучения: ";
+            content: '🕗 Длительность обучения: ';
             font-weight: 900;
             color: $c-muted;
           }
           & .info__edu-base::before {
-            content: "📚 Обучение на базе: ";
+            content: '📚 Обучение на базе: ';
             font-weight: 900;
             color: $c-muted;
           }
           & .info__price::before {
-            content: "​💳​ Цена: ";
+            content: '​💳​ Цена: ';
             font-weight: 900;
             color: $c-muted;
           }

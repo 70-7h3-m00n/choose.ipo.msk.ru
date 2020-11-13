@@ -20,7 +20,10 @@
     & .carousel__item {
       display: none;
       &.show {
+        opacity: 1;
         display: block;
+        animation-name: fadeIn;
+        animation-duration: 0.3s;
       }
     }
   }

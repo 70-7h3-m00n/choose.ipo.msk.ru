@@ -2,6 +2,21 @@
   box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   padding: 2rem;
+  & .input-group__input {
+    margin-top: 1rem;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+  & .input-user-name {
+    display: none;
+    &.show {
+      display: block;
+      opacity: 1;
+      animation-name: fadeIn;
+      animation-duration: 0.8s;
+    }
+  }
 }
 
 .form__title {
@@ -37,6 +52,39 @@
   .form {
     max-width: 20rem;
     min-width: 20rem;
+    &.form-horizontal {
+      min-width: 100%;
+      margin: 0 auto;
+      & .form__subtitle {
+        margin-bottom: 1.5rem;
+      }
+      & .form__input-group {
+        display: grid;
+        & input {
+          margin: 0;
+        }
+        & input:nth-child(1) {
+          grid-area: input;
+        }
+        & input:nth-child(2) {
+          grid-area: input2;
+        }
+        & input:nth-child(3) {
+          grid-area: input3;
+        }
+        & input:nth-last-child(1) {
+          grid-area: submut-btn;
+          grid-column-start: 1;
+          grid-column-end: 2;
+          max-width: 2rem;
+        }
+        grid-template-areas:
+          'input input2 input3'
+          'submit-btn submit-btn submit-btn';
+        // grid-template-columns: 4fr 4fr 4fr;
+        grid-gap: 0.36rem 1rem;
+      }
+    }
     & .btn {
       max-width: 100%;
       min-width: 100%;

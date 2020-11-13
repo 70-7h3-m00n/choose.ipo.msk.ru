@@ -12,6 +12,8 @@ header {
 
 .hamburger {
   width: 3.3125rem;
+  // -webkit-appearance: none;
+  // border-radius: 0;
 }
 
 .hamburger__line {
@@ -24,6 +26,22 @@ header {
   }
 }
 
+.header-logo {
+  width: 100%;
+  max-width: 3.5rem;
+  height: auto;
+}
+.logo-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 16rem;
+}
+.logo-group__text {
+  margin-left: 1rem;
+  color: $c-light;
+  font-size: 0.8rem;
+}
 @include mediaMd {
   body .section-heading {
     padding-top: 0;
@@ -43,15 +61,6 @@ header {
       }
     }
   }
-  .logo-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 16rem;
-  }
-  .logo-group__text {
-    margin-left: 1rem;
-  }
 
   .desktop-menu__header-group {
     display: flex;
@@ -64,7 +73,9 @@ header {
   }
 
   .header-logo {
-    min-width: 4.5rem;
+    width: 100%;
+    max-width: 4.5rem;
+    height: auto;
   }
   .desktop-menu {
     width: 100%;
@@ -74,7 +85,7 @@ header {
   }
   .menu-items {
     display: flex;
-    margin-left: 2rem;
+    margin: 0 0 1rem 2rem;
     padding: 0;
   }
   .menu-items__item {

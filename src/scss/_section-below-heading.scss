@@ -15,11 +15,12 @@
 
 @include mediaMd {
   .section-below-heading {
-    position: absolute;
-    width: 100%;
-    top: 80vh;
-    padding-bottom: 0;
-    padding-top: 1rem;
+    // position: absolute;
+    // width: 100%;
+    // top: 80vh;
+    // padding-bottom: 0;
+    padding-top: 2.5rem;
+    margin-top: -10rem;
     & .cards {
       flex-direction: row;
       justify-content: space-between;
@@ -36,4 +37,24 @@
       }
     }
   }
+  // @media only screen and (max-height: 923px) {
+  //   .section-heading__content {
+  //   }
+  // }
+  // @media only screen and (max-height: 860px) {
+  //   .section-heading__content {
+  //     margin-top: 10%;
+  //   }
+  //   main .section-below-heading {
+  //     top: 90vh;
+  //   }
+  // }
+  // @media only screen and (max-height: 689px) {
+  //   .section-heading__content {
+  //     margin-top: 14%;
+  //   }
+  //   main .section-below-heading {
+  //     top: 96vh;
+  //   }
+  // }
 }

@@ -41,6 +41,27 @@
 }
 
 @include mediaMd {
+  @media only screen and (max-height: 923px) {
+    .section-heading__content {
+    }
+  }
+  @media only screen and (max-height: 860px) {
+    .section-heading__content {
+      margin-top: 10%;
+      margin-bottom: 17%;
+    }
+    main .section-below-heading {
+      // top: 90vh;
+    }
+  }
+  @media only screen and (max-height: 689px) {
+    .section-heading__content {
+      margin-top: 13%;
+    }
+    main .section-below-heading {
+      // top: 96vh;
+    }
+  }
   .section-heading {
     &.section {
       padding-bottom: 0;

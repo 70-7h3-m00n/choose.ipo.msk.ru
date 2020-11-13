@@ -108,7 +108,7 @@ const cardInfo = `
               <div class="card__info">
                 <p class="h4 info__hours">От 256 часов</p>
                 <p class="h4 info__learn-time">От 1.5мес</p>
-                <p class="h4 info__edu-base desktop-only">Высшего или средне-профессионального образования</p>
+                <p class="h4 info__edu-base">Высшего или средне-профессионального образования</p>
               </div>
               `;
 
@@ -163,6 +163,7 @@ const management = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Economics
@@ -198,6 +199,7 @@ const economics = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Pedagogy 
@@ -250,6 +252,7 @@ const pedagogy  = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Psychology
@@ -289,6 +292,7 @@ const psychology = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Healthcare
@@ -350,6 +354,7 @@ const healthcare = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Informatics
@@ -369,6 +374,7 @@ const informatics = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Jurisprudence
@@ -387,6 +393,7 @@ const jurisprudence = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Marketing 
@@ -407,6 +414,7 @@ const marketing = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 // Technology
@@ -433,6 +441,7 @@ const technology = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
+  limitClients();
 }
 
 
@@ -519,10 +528,21 @@ function addListenersToBtns(){
   
 }
 
-function showPopUpForm(){
+function showPopUpForm(e){
   const formPopUp = document.getElementById('module-1');
   const userNumber = document.getElementById('popup-form-user-number');
   formPopUp.classList.add('show');
+  
+  const clickedProgram = e.target.parentNode.parentNode;
+  const clickedProgramTitle = clickedProgram.firstElementChild.firstElementChild.innerHTML;
+
+  const choosenProgramInputs = document.querySelectorAll('.choosen-program');
+  const choosenProgramInputsArr = Array.prototype.slice.call(choosenProgramInputs);
+
+  choosenProgramInputsArr.forEach(input => {
+    input.value = clickedProgramTitle;
+  })
+
   userNumber.focus();
 
   document.body.addEventListener('click', closePopUpForm);
@@ -591,6 +611,26 @@ function limitClients(){
   })
 }
 
-
 limitCards();
 limitClients();
+
+function showNameInput(){
+  const numInputs = document.querySelectorAll('.input-user-number');
+  const nameInputs = document.querySelectorAll('.input-user-name');
+  const nameInputsArr = Array.prototype.slice.call(nameInputs);
+  const numInputsArr = Array.prototype.slice.call(numInputs);
+  let timesPressed = 0;
+  
+  numInputsArr.forEach(input => {
+    input.addEventListener('keydown', () =>{
+      timesPressed++;
+      if(timesPressed > 3){
+        nameInputsArr.forEach(input => {
+          input.classList.add('show');
+        })
+      }
+    })
+  })
+}
+
+showNameInput();

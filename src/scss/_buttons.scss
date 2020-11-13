@@ -35,6 +35,10 @@
     -webkit-animation: 3.3s linear 0s infinite normal shine;
     animation: 3.3s linear 0s infinite normal shine;
   }
+  &.no-shine::after {
+    content: '';
+    display: none;
+  }
   @include easeOut;
   &:hover,
   &:active,
@@ -91,6 +95,15 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
+  &.hover {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $c-beta;
+      color: $c-light;
+      border-color: $c-beta;
+    }
+  }
 }
 
 .btn-quaternary--2 {
