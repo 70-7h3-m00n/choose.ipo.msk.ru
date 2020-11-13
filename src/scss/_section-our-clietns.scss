@@ -1,0 +1,27 @@
+@include mediaMd {
+  .section-our-clients {
+    & .carousel__item {
+      flex: 0 33%;
+      & img {
+        min-width: 8rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+.section-our-clients {
+  & .load-more-clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & .carousel {
+    & .carousel__item {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

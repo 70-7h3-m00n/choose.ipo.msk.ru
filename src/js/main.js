@@ -162,6 +162,7 @@ const management = function (page){
 
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Economics
@@ -196,6 +197,7 @@ const economics = function (page){
 
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Pedagogy 
@@ -247,6 +249,7 @@ const pedagogy  = function (page){
 
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Psychology
@@ -285,6 +288,7 @@ const psychology = function (page){
 
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Healthcare
@@ -345,6 +349,7 @@ const healthcare = function (page){
 
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Informatics
@@ -363,6 +368,7 @@ const informatics = function (page){
   
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Jurisprudence
@@ -380,6 +386,7 @@ const jurisprudence = function (page){
   
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Marketing 
@@ -399,6 +406,7 @@ const marketing = function (page){
   
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 // Technology
@@ -424,6 +432,7 @@ const technology = function (page){
 
   scrollIntoView(body);
   addListenersToBtns();
+  limitCards();
 }
 
 
@@ -554,4 +563,34 @@ function limitCards(){
   })
 }
 
+// Display only 5 clients at the time
+function limitClients(){
+  const clietns = document.querySelectorAll('.section-our-clients .carousel__item');
+  const clietnsArr = Array.prototype.slice.call(clietns);
+  const loadMoreBtn = document.getElementById('load-more-clients__btn');
+  let clientsTotal = 0;
+
+  clietnsArr.forEach((client) => {
+    if(clientsTotal >= 6){
+      return;
+    }else{
+      client.classList.add('show');
+      clientsTotal++;
+    }
+  })
+  
+  loadMoreBtn.addEventListener('click', () => {
+    clientsTotal = clientsTotal+6;
+    clietnsArr.forEach((card, index) => {
+      if(index >= clientsTotal){
+        return;
+      }else{
+        card.classList.add('show');
+      }
+    })
+  })
+}
+
+
 limitCards();
+limitClients();
