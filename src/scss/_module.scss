@@ -31,7 +31,9 @@
     display: none;
     &.show {
       @include easeOut;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       opacity: 1;
       background-color: rgba(0, 0, 0, 0.5);
       position: fixed;
@@ -41,11 +43,14 @@
       width: 100%;
       z-index: 10;
       & .form {
+        overflow: auto;
         background-color: $c-light;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        max-height: 100vh;
+        border-radius: 15px;
+        & .btn {
+          margin-bottom: 2rem;
+        }
       }
       animation-name: fadeIn;
       animation-duration: 0.3s;

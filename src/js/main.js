@@ -1,7 +1,16 @@
 import '../scss/main.scss';
+// import '../thankyou/thankyou.html';
 
 const sectionPrograms = document.getElementById('section-programs');
 const body = document.getElementById('body');
+
+const clientUrlInputs = document.querySelectorAll('.input-client-url');
+const clientUrl = window.location.href;
+const clientUrlInputsArr = Array.prototype.slice.call(clientUrlInputs);
+
+clientUrlInputsArr.forEach(input => {
+  input.value = clientUrl;
+})
 
 /////////////////////////////////////////////////////////////////////
 // States
@@ -45,6 +54,7 @@ const PageState = function () {
     currentState = new technology(this);
   }else{
     currentState = new management(this);
+    // currentState;
   }
 
   this.init = function () {
@@ -68,6 +78,7 @@ const PageState = function () {
       this.change(new technology());
     }else{
       this.change(new management());
+      // return;
     }
   };
 
@@ -94,11 +105,21 @@ function createCard(cardTitle = '', cardInfo = ''){
 function scrollIntoView(el = ''){
 
   if(el !== ''){
-    el.scrollIntoView(true);
-    el.scrollTop;
+    // el.scrollIntoView(true);
+    // el.scrollTop;
+    window.scrollTo(0, 0);
+    // window.location.hash = el.id;
+    // window.location.href = window.location.href.split('#')[0];
     // body.scrollIntoView({
     //   behavior: 'auto'
     // });
+
+    // window.scroll({
+    //   top: 0, 
+    //   left: 0, 
+    //   behavior: 'smooth'
+    // });
+    
   }else{
     return;
   }
@@ -164,7 +185,8 @@ const management = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Economics
@@ -200,7 +222,8 @@ const economics = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Pedagogy 
@@ -253,7 +276,8 @@ const pedagogy  = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Psychology
@@ -293,7 +317,8 @@ const psychology = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Healthcare
@@ -355,7 +380,8 @@ const healthcare = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Informatics
@@ -375,7 +401,8 @@ const informatics = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Jurisprudence
@@ -394,7 +421,8 @@ const jurisprudence = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Marketing 
@@ -415,7 +443,8 @@ const marketing = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 // Technology
@@ -442,7 +471,8 @@ const technology = function (page){
   scrollIntoView(body);
   addListenersToBtns();
   limitCards();
-  limitClients();
+  showMoreClients();
+  changeThankyouPage();
 }
 
 
@@ -581,11 +611,14 @@ function limitCards(){
         card.classList.add('show');
       }
     })
+    if(cardsTotal >= cardsArr.length){
+      loadMoreBtn.style.display = 'none';
+    }
   })
 }
 
 // Display only 5 clients at the time
-function limitClients(){
+function showMoreClients(){
   const clietns = document.querySelectorAll('.section-our-clients .carousel__item');
   const clietnsArr = Array.prototype.slice.call(clietns);
   const loadMoreBtn = document.getElementById('load-more-clients__btn');
@@ -601,7 +634,7 @@ function limitClients(){
   })
   
   loadMoreBtn.addEventListener('click', () => {
-    clientsTotal = clientsTotal+6;
+    clientsTotal += 6;
     clietnsArr.forEach((card, index) => {
       if(index >= clientsTotal){
         return;
@@ -609,11 +642,49 @@ function limitClients(){
         card.classList.add('show');
       }
     })
+    // showLessClients();
+    if(clientsTotal >= clietnsArr.length){
+      loadMoreBtn.style.display = 'none';
+    }
   })
 }
 
-limitCards();
-limitClients();
+function showLessClients(){
+// Check for an end of an array
+if(clientsTotal >= clietnsArr.length){
+  console.log('TRUE');
+  loadMoreBtn.innerHTML = 'Свернуть';
+
+  loadMoreBtn.addEventListener('click', () => {
+    const ourClientsSection = document.getElementById('section-our-clients');
+      ourClientsSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+    loadMoreBtn.innerHTML = 'Ещё';
+
+    // clietnsArr.forEach((card, index) => {
+    //   if(index >= 6){
+    //     card.classList.remove('show');
+    //   }
+    // })
+    showMoreClients();
+
+    // Start over
+    // clientsTotal = 0;
+    // loadMoreBtn.addEventListener('click', () => {
+    //   clientsTotal += 6;
+    //   clietnsArr.forEach((card, index) => {
+    //     if(index >= clientsTotal){
+    //       return;
+    //     }else{
+    //       card.classList.add('show');
+    //     }
+    //   })
+    // })
+    })
+  }
+}
 
 function showNameInput(){
   const numInputs = document.querySelectorAll('.input-user-number');
@@ -634,7 +705,18 @@ function showNameInput(){
   })
 }
 
-showNameInput();
+function validateForm(){
+
+}
+
+function changeThankyouPage(){
+  const inputThankyou = document.querySelectorAll('.input-thankyou');
+  const inputThankyouArr = Array.prototype.slice.call(inputThankyou);
+  
+  inputThankyouArr.forEach(input => {
+    input.value = window.location.origin+`/thankyou`+`?program=${window.location.pathname.substring(1)}`;
+  });
+}
 
 // Prevent smooth scroll
 // source: http://stackoverflow.com/a/35611393/992504
@@ -645,3 +727,7 @@ document.getElementsByTagName("body")[0].addEventListener("wheel",function (even
   }
   event.stopPropagation();
 }, true);
+
+// showNameInput();
+limitCards();
+showMoreClients();

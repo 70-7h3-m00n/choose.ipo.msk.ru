@@ -9,13 +9,13 @@
     }
   }
   & .input-user-name {
-    display: none;
-    &.show {
-      display: block;
-      opacity: 1;
-      animation-name: fadeIn;
-      animation-duration: 0.8s;
-    }
+    // display: none;
+    // &.show {
+    //   display: block;
+    //   opacity: 1;
+    //   animation-name: fadeIn;
+    //   animation-duration: 0.8s;
+    // }
   }
 }
 
