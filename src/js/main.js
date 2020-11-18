@@ -705,9 +705,21 @@ function showNameInput(){
   })
 }
 
-function validateForm(){
+// function validateForm(){
+//   const numberInputs = document.querySelectorAll('.input-user-number');
+//   const numberInputsArr = Array.prototype.slice.call(numberInputs);
 
-}
+//   const submitBtns = document.querySelectorAll('.input--submit');
+//   const submitBtnsArr = Array.prototype.slice.call(submitBtns)
+
+//   submitBtnsArr.forEach(btn => {
+//     btn.addEventListener('click', () =>{
+//       console.log(this);
+//     })
+//   })
+// }
+
+// validateForm();
 
 function changeThankyouPage(){
   const inputThankyou = document.querySelectorAll('.input-thankyou');
