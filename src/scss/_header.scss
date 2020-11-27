@@ -8,6 +8,8 @@ header {
   align-items: center;
   background-color: $c-alpha;
   z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 10px;
 }
 
 .hamburger {
@@ -126,3 +128,38 @@ header {
     }
   }
 }
+
+.top-banner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #07243c;
+  background-image: url('../img/banner-person.png'), url('../img/top-bg.jpg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, cover;
+  background-position: center, center;
+  height: 67px;
+  width: 100%;
+  cursor: pointer;
+  & .top-banner__waves{
+    position: absolute;
+  }
+  & .top-banner__waves--orange{
+    display: flex;
+    flex-direction: column;
+    left: 10%;
+    top: .8rem;
+  }
+  & .top-banner__waves--light{
+    right: 10%;
+    top: -.4rem;
+  }
+}
+// @media only screen and (max-width: 1215px) {
+//   header{
+//     padding-top: 0;
+//   }
+//   .top-banner{
+//     display: none;
+//   }
+// }

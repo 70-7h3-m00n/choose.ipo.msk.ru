@@ -39,12 +39,21 @@
   color: $c-muted-3;
 }
 
+.c-danger{
+  color: $c-danger;
+}
+
 .d-block {
   display: block;
 }
 
 .fw-bold {
   font-weight: bold;
+}
+
+.text-crossed{
+  text-decoration: line-through;
+  text-decoration-color: $c-danger;
 }
 
 @include mediaMd {

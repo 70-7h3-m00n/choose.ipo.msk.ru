@@ -12,6 +12,12 @@ clientUrlInputsArr.forEach(input => {
   input.value = clientUrl;
 })
 
+const topBanner = document.getElementById('js-top-banner');
+topBanner.addEventListener('click', () =>{
+  sectionPrograms.scrollIntoView({
+    behavior: 'smooth'
+  })
+})
 /////////////////////////////////////////////////////////////////////
 // States
 
@@ -88,16 +94,22 @@ const PageState = function () {
 };
 
 // Vars for programs
-function createCard(cardTitle = '', cardInfo = ''){
+function createCard(cardTitle = '', cardHours = '256', cardDuration = '1.5', cardPrice = '14 900', cardPriceDiscount='10 430'){
   return `
           <div class="cards__card">
             <div class="card__title">
               <h3 class="h3">${cardTitle}</h3>
             </div>
-            ${cardInfo}
+            <div class="card__info">
+                <p class="h4 info__hours"><span>🕒</span> <span class="align-helper"><span class="card-info-icon">Объем программы:</span> От ${cardHours} часов</span></p>
+                <p class="h4 info__learn-time"><span>🕗</span> <span class="align-helper"><span class="card-info-icon">Длительность обучения:</span> От ${cardDuration} мес</span></p>
+                <p class="h4 info__edu-base"><span>📚</span> <span class="align-helper"><span class="card-info-icon">Обучение на базе:</span> Высшего или средне-профессионального образования</span></p>
+                <p class="h4 info__price"><span class="card-icon">💳​</span> <span class="align-helper"><span class="card-info-icon">Стоимость:</span> От <span class="text-crossed">${cardPrice}</span> <span class="c-danger on-new-line-mobile"><span class="h3">${cardPriceDiscount} руб /</span> за весь курс</span></span></p>
+              </div>
             <div class="card__btn">
               <a class="btn btn-primary js-btn-popup">Узнать подробнее</a>
             </div>
+            <div class="card__sale">30% скидка только до 10 декабря</div>
           </div>
         `
 }
@@ -125,15 +137,6 @@ function scrollIntoView(el = ''){
   }
 }
 
-// 💳​ Цена: 
-const cardInfo = `
-              <div class="card__info">
-                <p class="h4 info__hours"><span>🕒</span> <span class="align-helper"><span class="card-info-icon">Объем программы:</span> От 256 часов</span></p>
-                <p class="h4 info__learn-time"><span>🕗</span> <span class="align-helper"><span class="card-info-icon">Длительность обучения:</span> От 1.5мес</span></p>
-                <p class="h4 info__edu-base"><span>📚</span> <span class="align-helper"><span class="card-info-icon">Обучение на базе:</span> Высшего или средне-профессионального образования</span></p>
-              </div>
-              `;
-
 // Management
 const management = function (page){
   window.history.pushState({'page_id': 1}, '', '/management');
@@ -141,46 +144,46 @@ const management = function (page){
   headingTitle.innerHTML = 'в сфере менеджмента';
   dynamicProgramsTitle.innerHTML = 'в сфере менеджмента';
 
-  dynamicPrograms.innerHTML = createCard('Антикризисное управление', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Администрирование в сфере гостиничного сервиса', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Администрирование в спортивных клубах и фитнес-центрах', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Администрирование в развлекательно-досуговой организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Руководитель кадровой службы', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Руководитель театрального коллектива', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Руководитель хореографического коллектива', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджер по развитию персонала', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управление персоналом', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджер по подбору и адаптации персонала', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Специалист по подбору и адаптации персонала', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджер по оценке персонала', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Директор по персоналу', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Специалист по кадровому делопроизводству', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Специалист по кадровому аудиту', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджер по оплате и нормированию труда', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управление проектами', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управление инновационными проектами', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управление качеством', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стратегический менеджмент', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в образовании в условиях реализации ФГОС', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере гостиничного сервиса', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере общественного питания', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере развлекательно-досуговых услуг', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере туризма и сервиса', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере физической культуры и спорта', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Документоведение и архивоведение', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Финансовый менеджмент', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организационное и документационное обеспечение управления', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Делопроизводство в государственных и муниципальных учреждениях', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в спортивных учреждениях', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджмент в учреждениях культуры', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджер здравоохранения', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Менеджер образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Логистика общая', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Складская логистика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Транспортная логистика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Закупочная логистика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Государственное и муниципальное управление', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управление развитием региона', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Антикризисное управление');
+  dynamicPrograms.innerHTML += createCard('Администрирование в сфере гостиничного сервиса', '460', '1.5', '10 900', '7 600');
+  dynamicPrograms.innerHTML += createCard('Администрирование в спортивных клубах и фитнес-центрах', '460', '1.5', '10 900', '7 600');
+  dynamicPrograms.innerHTML += createCard('Администрирование в развлекательно-досуговой организации', '460', '1.5', '10 900', '7 600');
+  dynamicPrograms.innerHTML += createCard('Руководитель кадровой службы', '720', '3', '19 900', '13 900');
+  dynamicPrograms.innerHTML += createCard('Руководитель театрального коллектива', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Руководитель хореографического коллектива', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Менеджер по развитию персонала');
+  dynamicPrograms.innerHTML += createCard('Управление персоналом');
+  dynamicPrograms.innerHTML += createCard('Менеджер по подбору и адаптации персонала');
+  dynamicPrograms.innerHTML += createCard('Специалист по подбору и адаптации персонала', '440', '1.5', '13 900', '9 730');
+  dynamicPrograms.innerHTML += createCard('Менеджер по оценке персонала');
+  dynamicPrograms.innerHTML += createCard('Директор по персоналу', '660', '3', '18 500', '12 950');
+  dynamicPrograms.innerHTML += createCard('Специалист по кадровому делопроизводству', '560', '2', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Специалист по кадровому аудиту', '440', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Менеджер по оплате и нормированию труда');
+  dynamicPrograms.innerHTML += createCard('Управление проектами');
+  dynamicPrograms.innerHTML += createCard('Управление инновационными проектами');
+  dynamicPrograms.innerHTML += createCard('Управление качеством');
+  dynamicPrograms.innerHTML += createCard('Стратегический менеджмент');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в образовании в условиях реализации ФГОС', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере гостиничного сервиса', '784', '3', '17 500', '12 250');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере общественного питания', '784', '3', '17 500', '12 250');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере развлекательно-досуговых услуг', '730', '3', '16 900', '11 830');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере туризма и сервиса', '784', '3', '17 500', '12 250');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в сфере физической культуры и спорта', '660', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Документоведение и архивоведение');
+  dynamicPrograms.innerHTML += createCard('Финансовый менеджмент');
+  dynamicPrograms.innerHTML += createCard('Организационное и документационное обеспечение управления', '720', '3', '16 900', '11 830');
+  dynamicPrograms.innerHTML += createCard('Делопроизводство в государственных и муниципальных учреждениях', '720', '3', '16 900', '11 830');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в спортивных учреждениях');
+  dynamicPrograms.innerHTML += createCard('Менеджмент в учреждениях культуры');
+  dynamicPrograms.innerHTML += createCard('Менеджер здравоохранения');
+  dynamicPrograms.innerHTML += createCard('Менеджер образования');
+  dynamicPrograms.innerHTML += createCard('Логистика общая');
+  dynamicPrograms.innerHTML += createCard('Складская логистика');
+  dynamicPrograms.innerHTML += createCard('Транспортная логистика', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Закупочная логистика', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Государственное и муниципальное управление');
+  dynamicPrograms.innerHTML += createCard('Управление развитием региона');
 
   scrollIntoView(body);
   addListenersToBtns();
@@ -196,28 +199,28 @@ const economics = function (page){
   headingTitle.innerHTML = 'в сфере экономики';
   dynamicProgramsTitle.innerHTML = 'в сфере экономики';
 
-  dynamicPrograms.innerHTML = createCard('Бухгалтерский учет, анализ и аудит', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Бухгалтерский и налоговый учет в организациях малого бизнеса и ИП', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Бухгалтерский учет в некоммерческих организациях', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Бухгалтерский учет и налогообложение', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Международные отношения', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Ведение бухгалтерского учета в бюджетных организациях', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Бухгалтерский учёт и калькуляция на предприятиях общественного питания', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Налоги и налогообложение', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Экономика и управление на предприятии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация внутреннего контроля на предприятии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управленческий учет и анализ организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управленческий учет и финансовое планирование в организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Анализ и диагностика финансово-хозяйственной деятельности организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Финансы и кредит', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Финансовый анализ', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Внутренний аудит', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Страхование', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Экономическая безопасность', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Внешнеэкономическая деятельность', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Рынок ценных бумаг', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Региональная экономика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Экономист по оплате и нормированию труда', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Бухгалтерский учет, анализ и аудит');
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский и налоговый учет в организациях малого бизнеса и ИП', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский учет в некоммерческих организациях', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский учет и налогообложение', '676', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Международные отношения', '1024', '5', '19 900', '13 930');
+  dynamicPrograms.innerHTML += createCard('Ведение бухгалтерского учета в бюджетных организациях', '620', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Бухгалтерский учёт и калькуляция на предприятиях общественного питания', '406', '2.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Налоги и налогообложение', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Экономика и управление на предприятии');
+  dynamicPrograms.innerHTML += createCard('Организация внутреннего контроля на предприятии', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Управленческий учет и анализ организации', '460', '2', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Управленческий учет и финансовое планирование в организации', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Анализ и диагностика финансово-хозяйственной деятельности организации', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Финансы и кредит');
+  dynamicPrograms.innerHTML += createCard('Финансовый анализ');
+  dynamicPrograms.innerHTML += createCard('Внутренний аудит', '406', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Страхование', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Экономическая безопасность', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Внешнеэкономическая деятельность', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Рынок ценных бумаг');
+  dynamicPrograms.innerHTML += createCard('Региональная экономика', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Экономист по оплате и нормированию труда');
 
   scrollIntoView(body);
   addListenersToBtns();
@@ -233,45 +236,45 @@ const pedagogy  = function (page){
   headingTitle.innerHTML = 'в сфере педагогики';
   dynamicProgramsTitle.innerHTML = 'в сфере педагогики';
 
-  dynamicPrograms.innerHTML = createCard('Педагог высшего образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог обществознания', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог истории', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Логопедия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Специальное (дефектологическое) образование', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог основ безопасности жизнедеятельности', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог среднего профессионального образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог экологии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог-психолог', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогика и психология образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психолого-педагогическое сопровождение образовательного процесса', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагог высшей школы', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогика раннего развития', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогическая деятельность в области воспитания и социализации личности', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогика и методика дошкольного образования с дополнительной подготовкой в области предшкольной подготовки', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика и психология в условиях реализации ФГОС ДО', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Общая педагогика: теория и методика обучения в рамках реализации ФГОС', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогика и методика начального образования в рамках реализации ФГОС', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогика и психология дошкольного образования в условиях реализации ФГОС ДО', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Подготовка детей к школьному обучению в дошкольной образовательной организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Физическая культура в дошкольных образовательных организациях в рамках реализации ФГОС (базовая)', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Физическая культура в дошкольных образовательных организациях в рамках реализации ФГОС', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Физическая культура в образовательных организациях в рамках реализации ФГОС (базовая)', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Физическая культура в образовательных организациях в рамках реализации ФГОС', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Физкультурно-оздоровительная деятельность по плаванию с детьми дошкольного возраста', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Библиотечно-педагогическая деятельность', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Инструктор по детскому фитнесу', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Тренер-преподаватель по адаптивной физической культуре', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педагогика и методика начального образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика и психология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика, воспитатель ДОО', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Методист дошкольного образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Методическое обеспечение среднего профессионального образования', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Методология и технология педагогической деятельности', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Музыкальный руководитель в дошкольной образовательной организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Музыкальное воспитание и эстетическое развитие детей в дошкольной образовательной организации', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация и проведение практических занятий по адаптивной физической культуре', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация и проведение тренировочного процесса', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация и содержание логопедической работы', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Педагог высшего образования', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Педагог обществознания', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Педагог истории', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Логопедия', '990', '5', '19 900', '13 930');
+  dynamicPrograms.innerHTML += createCard('Специальное (дефектологическое) образование', '660', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Педагог основ безопасности жизнедеятельности', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Педагог среднего профессионального образования', '550', '2.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Педагог экологии', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Педагог-психолог');
+  dynamicPrograms.innerHTML += createCard('Педагогика и психология образования', '610', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Психолого-педагогическое сопровождение образовательного процесса', '390', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Педагог высшей школы', '550', '2', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Педагогика раннего развития', '440', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Педагогическая деятельность в области воспитания и социализации личности', '660', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Педагогика и методика дошкольного образования с дополнительной подготовкой в области предшкольной подготовки', '660', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика и психология в условиях реализации ФГОС ДО', '500', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Общая педагогика: теория и методика обучения в рамках реализации ФГОС', '620', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Педагогика и методика начального образования в рамках реализации ФГОС', '620', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Педагогика и психология дошкольного образования в условиях реализации ФГОС ДО', '660', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Подготовка детей к школьному обучению в дошкольной образовательной организации', '440', '2', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Физическая культура в дошкольных образовательных организациях в рамках реализации ФГОС (базовая)', '330', '2', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Физическая культура в дошкольных образовательных организациях в рамках реализации ФГОС', '500', '2', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Физическая культура в образовательных организациях в рамках реализации ФГОС (базовая)', '390', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Физическая культура в образовательных организациях в рамках реализации ФГОС', '500', '3', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Физкультурно-оздоровительная деятельность по плаванию с детьми дошкольного возраста', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Библиотечно-педагогическая деятельность', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Инструктор по детскому фитнесу', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Тренер-преподаватель по адаптивной физической культуре', '610', '3', '15 500', '10 850');
+  dynamicPrograms.innerHTML += createCard('Педагогика и методика начального образования');
+  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика и психология');
+  dynamicPrograms.innerHTML += createCard('Дошкольная педагогика, воспитатель ДОО');
+  dynamicPrograms.innerHTML += createCard('Методист дошкольного образования', '390', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Методическое обеспечение среднего профессионального образования', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Методология и технология педагогической деятельности', '440', '2', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Музыкальный руководитель в дошкольной образовательной организации', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Музыкальное воспитание и эстетическое развитие детей в дошкольной образовательной организации', '440', '2', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Организация и проведение практических занятий по адаптивной физической культуре', '720', '3', '16 900', '11 830');
+  dynamicPrograms.innerHTML += createCard('Организация и проведение тренировочного процесса', '1100', '5', '19 900', '13 930');
+  dynamicPrograms.innerHTML += createCard('Организация и содержание логопедической работы', '610', '3', '15 500', '10 850');
 
   scrollIntoView(body);
   addListenersToBtns();
@@ -288,31 +291,31 @@ const psychology = function (page){
   headingTitle.innerHTML = 'в сфере психологии';
   dynamicProgramsTitle.innerHTML = 'в сфере психологии';
 
-  dynamicPrograms.innerHTML = createCard('Психология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психология: Очно-заочная (вечерняя) форма обучения', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Клиническая психология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психология личности', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Социальная психология в бизнесе', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Социальная психология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психология служебной деятельности', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Спортивная психология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психолог-тренер', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Нейропсихология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Акмеология и психология развития', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Школьный психолог', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Детская психология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психология семьи с основами психотерапии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психология дошкольного образования в условиях реализации ФГОС ДО', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Социальная работа', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Социальный педагог', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Руководитель организации социального обслуживания', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация социального обслуживания населения', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Деятельность органов опеки и попечительства в отношении несовершеннолетних', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Политология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Религиоведение', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Культурология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Социология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Философия', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Психология');
+  dynamicPrograms.innerHTML += createCard('Психология: Очно-заочная (вечерняя) форма обучения');
+  dynamicPrograms.innerHTML += createCard('Клиническая психология', '935', '5', '24 900', '17 430');
+  dynamicPrograms.innerHTML += createCard('Психология личности', '1024', '5', '24 900', '17 430');
+  dynamicPrograms.innerHTML += createCard('Социальная психология в бизнесе');
+  dynamicPrograms.innerHTML += createCard('Социальная психология', '660', '3', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Психология служебной деятельности', '1024', '5', '24 900', '17 430');
+  dynamicPrograms.innerHTML += createCard('Спортивная психология', '660', '3', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Психолог-тренер', '500', '3', '17 900', '12 530');
+  dynamicPrograms.innerHTML += createCard('Нейропсихология', '1024', '5', '24 900', '17 430');
+  dynamicPrograms.innerHTML += createCard('Акмеология и психология развития', '690', '3', '18 900', '13 250');
+  dynamicPrograms.innerHTML += createCard('Школьный психолог', '512', '3', '18 900', '13 250');
+  dynamicPrograms.innerHTML += createCard('Детская психология', '720', '3', '19 900', '13 930');
+  dynamicPrograms.innerHTML += createCard('Психология семьи с основами психотерапии');
+  dynamicPrograms.innerHTML += createCard('Психология дошкольного образования в условиях реализации ФГОС ДО', '440', '1.5', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Социальная работа');
+  dynamicPrograms.innerHTML += createCard('Социальный педагог');
+  dynamicPrograms.innerHTML += createCard('Руководитель организации социального обслуживания', '730', '3', '16 900', '11 830');
+  dynamicPrograms.innerHTML += createCard('Организация социального обслуживания населения', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Деятельность органов опеки и попечительства в отношении несовершеннолетних', '330', '1.5', '10 500', '7 350');
+  dynamicPrograms.innerHTML += createCard('Политология', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Религиоведение', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Культурология');
+  dynamicPrograms.innerHTML += createCard('Социология');
+  dynamicPrograms.innerHTML += createCard('Философия', '256', '1.5', '9 900', '6 930');
 
   scrollIntoView(body);
   addListenersToBtns();
@@ -328,54 +331,54 @@ const healthcare = function (page){
   headingTitle.innerHTML = 'в сфере медицины';
   dynamicProgramsTitle.innerHTML = 'в сфере медицины';
 
-  dynamicPrograms.innerHTML = createCard('Клиническая фармакология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психиатрия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Психотерапия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринский уход в физиотерапевтической практике', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Акушерское дело', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринское дело', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация сестринского дела', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринское дело в косметологии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринское дело в педиатрии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринское дело в онкологии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринское дело в терапии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сестринское дело в хирургии', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Лабораторное дело', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Операционное дело', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Общая практика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Медицинская сестра врача общей практики', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Медико-социальная помощь', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация здравоохранения и общественное здоровье', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Медицинская статистика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Судебно-медицинская экспертиза(СМП)', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Судебно-медицинская экспертиза', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Диетология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Наркология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Онкология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Остеопатия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Ревматология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Рентгенология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Паразитология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стоматология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стоматология общей практики', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стоматология детская', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стоматология хирургическая', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стоматология ортопедическая', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Стоматология терапевтическая', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Педиатрия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Патологическая анатомия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сексология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Фтизиатрия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Гистология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Эпидемиология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Эндоскопия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Бактериология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Фельдшер', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Дезинфекционное дело', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Травматология и ортопедия', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Анестезиология и реаниматология', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Гигиеническое воспитание', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Лечебная физкультура и спортивная медицина', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Клиническая фармакология');
+  dynamicPrograms.innerHTML += createCard('Психиатрия');
+  dynamicPrograms.innerHTML += createCard('Психотерапия');
+  dynamicPrograms.innerHTML += createCard('Сестринский уход в физиотерапевтической практике');
+  dynamicPrograms.innerHTML += createCard('Акушерское дело');
+  dynamicPrograms.innerHTML += createCard('Сестринское дело');
+  dynamicPrograms.innerHTML += createCard('Организация сестринского дела');
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в косметологии');
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в педиатрии');
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в онкологии');
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в терапии');
+  dynamicPrograms.innerHTML += createCard('Сестринское дело в хирургии');
+  dynamicPrograms.innerHTML += createCard('Лабораторное дело');
+  dynamicPrograms.innerHTML += createCard('Операционное дело');
+  dynamicPrograms.innerHTML += createCard('Общая практика');
+  dynamicPrograms.innerHTML += createCard('Медицинская сестра врача общей практики');
+  dynamicPrograms.innerHTML += createCard('Медико-социальная помощь');
+  dynamicPrograms.innerHTML += createCard('Организация здравоохранения и общественное здоровье');
+  dynamicPrograms.innerHTML += createCard('Медицинская статистика');
+  dynamicPrograms.innerHTML += createCard('Судебно-медицинская экспертиза(СМП)');
+  dynamicPrograms.innerHTML += createCard('Судебно-медицинская экспертиза');
+  dynamicPrograms.innerHTML += createCard('Диетология');
+  dynamicPrograms.innerHTML += createCard('Наркология');
+  dynamicPrograms.innerHTML += createCard('Онкология');
+  dynamicPrograms.innerHTML += createCard('Остеопатия');
+  dynamicPrograms.innerHTML += createCard('Ревматология');
+  dynamicPrograms.innerHTML += createCard('Рентгенология');
+  dynamicPrograms.innerHTML += createCard('Паразитология');
+  dynamicPrograms.innerHTML += createCard('Стоматология');
+  dynamicPrograms.innerHTML += createCard('Стоматология общей практики');
+  dynamicPrograms.innerHTML += createCard('Стоматология детская');
+  dynamicPrograms.innerHTML += createCard('Стоматология хирургическая');
+  dynamicPrograms.innerHTML += createCard('Стоматология ортопедическая');
+  dynamicPrograms.innerHTML += createCard('Стоматология терапевтическая');
+  dynamicPrograms.innerHTML += createCard('Педиатрия');
+  dynamicPrograms.innerHTML += createCard('Патологическая анатомия');
+  dynamicPrograms.innerHTML += createCard('Сексология');
+  dynamicPrograms.innerHTML += createCard('Фтизиатрия');
+  dynamicPrograms.innerHTML += createCard('Гистология');
+  dynamicPrograms.innerHTML += createCard('Эпидемиология');
+  dynamicPrograms.innerHTML += createCard('Эндоскопия');
+  dynamicPrograms.innerHTML += createCard('Бактериология');
+  dynamicPrograms.innerHTML += createCard('Фельдшер');
+  dynamicPrograms.innerHTML += createCard('Дезинфекционное дело');
+  dynamicPrograms.innerHTML += createCard('Травматология и ортопедия');
+  dynamicPrograms.innerHTML += createCard('Анестезиология и реаниматология');
+  dynamicPrograms.innerHTML += createCard('Гигиеническое воспитание');
+  dynamicPrograms.innerHTML += createCard('Лечебная физкультура и спортивная медицина');
 
   scrollIntoView(body);
   addListenersToBtns();
@@ -391,12 +394,12 @@ const informatics = function (page){
   headingTitle.innerHTML = 'в сфере информатики';
   dynamicProgramsTitle.innerHTML = 'в сфере информатики';
 
-  dynamicPrograms.innerHTML = createCard('Информатика и вычислительная техника', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Вычислительные машины, комплексы, системы и сети', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Технология разработки программного обеспечения', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Технология разработки мобильного приложения', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Программное обеспечение средств вычислительной техники и автоматизированных систем', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Информационные управляющие комплексы систем безопасности объектов', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Информатика и вычислительная техника', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Вычислительные машины, комплексы, системы и сети');
+  dynamicPrograms.innerHTML += createCard('Технология разработки программного обеспечения');
+  dynamicPrograms.innerHTML += createCard('Технология разработки мобильного приложения');
+  dynamicPrograms.innerHTML += createCard('Программное обеспечение средств вычислительной техники и автоматизированных систем');
+  dynamicPrograms.innerHTML += createCard('Информационные управляющие комплексы систем безопасности объектов');
   
   scrollIntoView(body);
   addListenersToBtns();
@@ -412,11 +415,11 @@ const jurisprudence = function (page){
   headingTitle.innerHTML = 'в сфере юриспруденции';
   dynamicProgramsTitle.innerHTML = 'в сфере юриспруденции';
 
-  dynamicPrograms.innerHTML = createCard('Юриспруденция', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Сделки с недвижимостью', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Специалист договорного отдела', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Юриспруденция: гражданско-правовой профиль', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Правовое сопровождение социального обеспечения граждан Р.Ф.', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Юриспруденция', '256', '1.5', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Сделки с недвижимостью', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Специалист договорного отдела', '256', '1.5', '9 900', '6 930');
+  dynamicPrograms.innerHTML += createCard('Юриспруденция: гражданско-правовой профиль', '2014', '5', '24 900', '17 430');
+  dynamicPrograms.innerHTML += createCard('Правовое сопровождение социального обеспечения граждан Р.Ф.', '330', '1.5', '20 500', '14 350');
   
   scrollIntoView(body);
   addListenersToBtns();
@@ -432,13 +435,13 @@ const marketing = function (page){
   headingTitle.innerHTML = 'в сфере маркетинга';
   dynamicProgramsTitle.innerHTML = 'в сфере маркетинга';
 
-  dynamicPrograms.innerHTML = createCard('Менеджер по маркетингу', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Интернет-маркетинг', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Директор по маркетингу', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Реклама и PR (Рссо)', cardInfo);
-  dynamicPrograms.innerHTML += createCard('PR менеджер', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Основы брендинга и рекламы', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Журналистика', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Менеджер по маркетингу', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Интернет-маркетинг', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Директор по маркетингу', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Реклама и PR (Рссо)', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('PR менеджер', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Основы брендинга и рекламы', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Журналистика', '256', '1.5', '14 900', '10 430');
   
   scrollIntoView(body);
   addListenersToBtns();
@@ -454,19 +457,19 @@ const technology = function (page){
   headingTitle.innerHTML = 'в технической сфере';
   dynamicProgramsTitle.innerHTML = 'в технической сфере';
 
-  dynamicPrograms.innerHTML = createCard('Промышленное и гражданское строительство', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Проектирование зданий и сооружений', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Эксплуатация зданий и сооружений', cardInfo);
-  dynamicPrograms.innerHTML += createCard(' Электроэнергетические системы и сети', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Электрооборудование и электрохозяйство предприятий, организаций и учреждений', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Теплоэнергетика и теплотехника', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Промышленная теплоэнергетика', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Охрана труда', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Организация системы управления охраной труда', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Охрана труда и техносферная безопасность', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Управление охраной труда и обеспечение безопасности на рабочих местах', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Техносферная безопасность', cardInfo);
-  dynamicPrograms.innerHTML += createCard('Технология транспортных процессов в области организации и безопасности дорожного движения', cardInfo);
+  dynamicPrograms.innerHTML = createCard('Промышленное и гражданское строительство', '256', '1.5', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Проектирование зданий и сооружений', '256', '1.5', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Эксплуатация зданий и сооружений', '512', '2.5', '25 900', '18 130');
+  dynamicPrograms.innerHTML += createCard('Электроэнергетические системы и сети', '256', '1.5', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Электрооборудование и электрохозяйство предприятий, организаций и учреждений', '256', '1.5', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Теплоэнергетика и теплотехника', '512', '2.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Промышленная теплоэнергетика', '512', '2.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Охрана труда', '256', '1.5', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Организация системы управления охраной труда', '400', '2', '10 900', '7 630');
+  dynamicPrograms.innerHTML += createCard('Охрана труда и техносферная безопасность', '256', '1.5', '18 900', '13 230');
+  dynamicPrograms.innerHTML += createCard('Управление охраной труда и обеспечение безопасности на рабочих местах', '500', '2', '14 900', '10 430');
+  dynamicPrograms.innerHTML += createCard('Техносферная безопасность', '720', '3', '16 900', '11 830');
+  dynamicPrograms.innerHTML += createCard('Технология транспортных процессов в области организации и безопасности дорожного движения', '512', '2.5', '14 900', '10 430');
 
   scrollIntoView(body);
   addListenersToBtns();

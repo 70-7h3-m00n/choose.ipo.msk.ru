@@ -10,6 +10,7 @@
   & .cards-programs {
     & .cards__card {
       display: none;
+      position: relative;
       &.show {
         display: block;
       }
@@ -22,9 +23,31 @@
             margin-left: 0.6rem;
           }
         }
-        .card-info-icon {
+        & .card-info-icon {
           font-weight: 900;
           color: $c-muted;
+        }
+      }
+      & .info__price{
+        padding-top: .5rem;
+      }
+      & .card__sale{
+        position: absolute;
+        top: -1rem;
+        right: 0;
+        display: block;
+        text-align: center;
+        background-color: $c-danger;
+        color: $c-gamma;
+        padding: .6rem;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      @media only screen and (max-width: 548px) {
+        .on-new-line-mobile{
+          display: block;
         }
       }
     }
@@ -47,6 +70,7 @@
         width: 100%;
         margin-right: 0;
         display: none;
+        
         &.show {
           display: grid;
         }
@@ -98,6 +122,9 @@
         }
         & .btn {
           margin: 0;
+        }
+        & .card__sale{
+          right: -0.9rem;
         }
       }
     }
