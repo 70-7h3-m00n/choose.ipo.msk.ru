@@ -27,6 +27,144 @@
     background-color: $c-light;
     color: $c-dark;
   }
+
+  // Dynamic BG
+  &.management{
+    background-image: url('../img/bgs/Менеджмент_640_360.jpg');
+    background-position: right;
+  }
+  @include mediaLg{
+    &.management{
+      background-image: url('../img/bgs/Менеджмент_1366_768.jpg');
+    }
+  }
+  @include mediaXl{
+    &.management{
+      background-image: url('../img/bgs/Менеджмент_1920_1080.jpg');
+    }
+  }
+
+  &.economics{
+    background-image: url('../img/bgs/Экономика_640_360_.jpg');
+  }
+  @include mediaLg{
+    &.economics{
+      background-image: url('../img/bgs/Экономика_1366_768_.jpg');
+    }
+  }
+  @include mediaXl{
+    &.economics{
+      background-image: url('../img/bgs/Экономика_1920_1080.jpg');
+    }
+  }
+
+  &.pedagogy{
+    background-image: url('../img/bgs/Педагогика_640_360_.jpg');
+    background-position: center;
+  }
+  @include mediaLg{
+    &.pedagogy{
+      background-image: url('../img/bgs/Педагогика_1366_768_.jpg');
+      background-position: right;
+    }
+  }
+  @include mediaXl{
+    &.pedagogy{
+      background-image: url('../img/bgs/Педагогика_1920_1080.jpg');
+      background-position: right;
+    }
+  }
+
+  &.psychology{
+    background-image: url('../img/bgs/Психология_640_360_.jpg');
+  }
+  @include mediaLg{
+    &.psychology{
+      background-image: url('../img/bgs/Психология_1366_768_.jpg');
+      background-position: right;
+    }
+  }
+  @include mediaXl{
+    &.psychology{
+      background-image: url('../img/bgs/Психология_1920_1080.jpg');
+    }
+  }
+
+  &.healthcare{
+    background-image: url('../img/bgs/Медицина_640_360.jpg');
+    background-position: right;
+  }
+  @include mediaLg{
+    &.healthcare{
+      background-image: url('../img/bgs/Медицина_1366_768.jpg');
+      background-position: right;
+    }
+  }
+  @include mediaXl{
+    &.healthcare{
+      background-image: url('../img/bgs/Медицина_1920_1080.jpg');
+      background-position: right;
+    }
+  }
+
+  &.informatics{
+    background-image: url('../img/bgs/Информатика и вычислительная техника_640_360.jpg');
+    background-position: left;
+  }
+  @include mediaLg{
+    &.informatics{
+      background-image: url('../img/bgs/Информатика и вычислительная техника_1366_768.jpg');
+    }
+  }
+  @include mediaXl{
+    &.informatics{
+      background-image: url('../img/bgs/Информатика и вычислительная техника_1920_1080.jpg');
+    }
+  }
+
+  &.jurisprudence{
+    background-image: url('../img/bgs/Юриспруденция_640_360.jpg');
+    background-position: right;
+  }
+  @include mediaLg{
+    &.jurisprudence{
+      background-image: url('../img/bgs/Юриспруденция_1366_768.jpg');
+    }
+  }
+  @include mediaXl{
+    &.jurisprudence{
+      background-image: url('../img/bgs/Юриспруденция_1920_1080.jpg');
+    }
+  }
+
+  &.marketing{
+    background-image: url('../img/bgs/Маркетинг_640_360.jpg');
+    background-position: right;
+  }
+  @include mediaLg{
+    &.marketing{
+      background-image: url('../img/bgs/Маркетинг_1366_768.jpg');
+    }
+  }
+  @include mediaXl{
+    &.marketing{
+      background-image: url('../img/bgs/Маркетинг_1920_1080.jpg');
+    }
+  }
+
+  &.technology{
+    background-image: url('../img/bgs/Технические направлени_640_360.jpg');
+  }
+  @include mediaLg{
+    &.technology{
+      background-image: url('../img/bgs/Технические направлени_1366_768.jpg');
+    }
+  }
+  @include mediaXl{
+    &.technology{
+      background-image: url('../img/bgs/Технические направлени_1920_1080.jpg');
+    }
+  }
 }
 
 .section-heading__content {

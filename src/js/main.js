@@ -190,6 +190,7 @@ const management = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('management');
 }
 
 // Economics
@@ -227,6 +228,7 @@ const economics = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('economics');
 }
 
 // Pedagogy 
@@ -281,6 +283,7 @@ const pedagogy  = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('pedagogy');
 }
 
 // Psychology
@@ -322,6 +325,7 @@ const psychology = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('psychology');
 }
 
 // Healthcare
@@ -385,6 +389,7 @@ const healthcare = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('healthcare');
 }
 
 // Informatics
@@ -406,6 +411,7 @@ const informatics = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('informatics');
 }
 
 // Jurisprudence
@@ -426,6 +432,7 @@ const jurisprudence = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('jurisprudence');
 }
 
 // Marketing 
@@ -448,6 +455,7 @@ const marketing = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('marketing');
 }
 
 // Technology
@@ -476,6 +484,7 @@ const technology = function (page){
   limitCards();
   showMoreClients();
   changeThankyouPage();
+  dynamicBg('technology');
 }
 
 
@@ -742,6 +751,20 @@ document.getElementsByTagName("body")[0].addEventListener("wheel",function (even
   }
   event.stopPropagation();
 }, true);
+
+function dynamicBg(currentClass){
+  const headingBg = document.getElementById('js-section-heading');
+  headingBg.classList.remove('management');
+  headingBg.classList.remove('economics');
+  headingBg.classList.remove('pedagogy');
+  headingBg.classList.remove('psychology');
+  headingBg.classList.remove('healthcare');
+  headingBg.classList.remove('informatics');
+  headingBg.classList.remove('jurisprudence');
+  headingBg.classList.remove('marketing');
+  headingBg.classList.remove('technology');
+  headingBg.classList.add(currentClass);
+}
 
 // showNameInput();
 limitCards();

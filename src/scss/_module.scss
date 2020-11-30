@@ -20,6 +20,7 @@
       border-top-right-radius: 25px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      width: 100%;
     }
     animation-name: fadeIn;
     animation-duration: 0.3s;
@@ -54,6 +55,17 @@
       }
       animation-name: fadeIn;
       animation-duration: 0.3s;
+    }
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .module{
+    .form__title{
+      margin-bottom: 1rem;
+    }
+    .form__subtitle{
+      display: none;
     }
   }
 }
