@@ -77,6 +77,7 @@
 
   &.psychology{
     background-image: url('../img/bgs/Психология_640_360_.jpg');
+    background-position: center;
   }
   @include mediaLg{
     &.psychology{
@@ -87,6 +88,7 @@
   @include mediaXl{
     &.psychology{
       background-image: url('../img/bgs/Психология_1920_1080.jpg');
+      background-position: right;
     }
   }
 
