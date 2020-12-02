@@ -181,63 +181,6 @@
 }
 
 @include mediaMd {
-  @media only screen and (max-height: 1100px) {
-    .section-heading__content {
-      margin-top: 4%;
-    }
-  }
-
-  @media only screen and (max-height: 1028px) {
-    .section-heading__content {
-      margin-top: 6%;
-      margin-bottom: 3%;
-    }
-  }
-
-  @media only screen and (max-height: 975px) {
-    .section-heading__content {
-      margin-top: 8%;
-      margin-bottom: 5%;
-    }
-  }
-  @media only screen and (max-height: 929px) {
-    .section-heading__content {
-      margin-top: 10%;
-      margin-bottom: 6%;
-    }
-  }
-  @media only screen and (max-height: 897px) {
-    .section-heading__content {
-      margin-bottom: 7%;
-    }
-  }
-  @media only screen and (max-height: 868px) {
-    .section-heading__content {
-      margin-top: 14%;
-      margin-bottom: 17%;
-    }
-    main .section-below-heading {
-      // top: 90vh;
-    }
-  }
-  @media only screen and (max-height: 768px) {
-    .section-heading__content {
-      margin-top: 18%;
-      margin-bottom: 17%;
-    }
-    main .section-below-heading {
-      // top: 90vh;
-    }
-  }
-  @media only screen and (max-height: 689px) {
-    .section-heading__content {
-      margin-top: 23%;
-      margin-bottom: 20%;
-    }
-    main .section-below-heading {
-      // top: 96vh;
-    }
-  }
   .section-heading {
     &.section {
       padding-bottom: 0;
@@ -251,5 +194,63 @@
     & h1 {
       text-align: left;
     }
+  }
+}
+
+@media only screen and (max-height: 1100px) {
+  .section-heading__content {
+    margin-top: 4%;
+  }
+}
+
+@media only screen and (max-height: 1028px) {
+  .section-heading__content {
+    margin-top: 6%;
+    margin-bottom: 3%;
+  }
+}
+
+@media only screen and (max-height: 975px) {
+  .section-heading__content {
+    margin-top: 8%;
+    margin-bottom: 5%;
+  }
+}
+@media only screen and (max-height: 929px) {
+  .section-heading__content {
+    margin-top: 10%;
+    margin-bottom: 6%;
+  }
+}
+@media only screen and (max-height: 897px) {
+  .section-heading__content {
+    margin-bottom: 7%;
+  }
+}
+@media only screen and (max-height: 868px) {
+  .section-heading__content {
+    margin-top: 14%;
+    margin-bottom: 17%;
+  }
+  main .section-below-heading {
+    // top: 90vh;
+  }
+}
+@media only screen and (max-height: 768px) {
+  // .section-heading__content {
+  //   margin-top: 18%;
+  //   margin-bottom: 17%;
+  // }
+  main .section-below-heading {
+    // top: 90vh;
+  }
+}
+@media only screen and (max-height: 689px) {
+  // .section-heading__content {
+  //   margin-top: 23%;
+  //   margin-bottom: 20%;
+  // }
+  main .section-below-heading {
+    // top: 96vh;
   }
 }
