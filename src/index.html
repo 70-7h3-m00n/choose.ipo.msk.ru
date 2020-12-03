@@ -235,32 +235,124 @@
               </div>
               <div class="form__input-group">
                 <input
-                  class="input-group__input input--field  input-user-name"
+                  class="input-group__input input--field input-user-name"
                   type="text"
-                  name="Имя"
+                  name="1. Имя: "
                   placeholder="Ваше имя"
                 />
 
                 <input
                   class="input-group__input input--field input-user-number"
                   type="text"
-                  name="Телефон"
+                  name="2. Телефон: "
                   placeholder="Ваш телефон"
                   required
                   pattern="^[0-9()-.+ ]+$"
                 />
 
                 <input
-                  class="input-group__input input--field"
+                  class="input-group__input input--field input-user-email"
                   type="hidden"
-                  name="Форма:"
+                  name="3. Почта: "
+                  placeholder="Ваша почта"
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-area"
+                  type="hidden"
+                  name="4. Направление: "
+                  value=""
+                />
+
+                <input
+                  class="choosen-program"
+                  type="hidden"
+                  name="5. Программа"
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-url"
+                  type="hidden"
+                  name="6. Страница с которой отправлена заявка: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-which-form"
+                  type="hidden"
+                  name="7. Форма: "
                   value="В шапке"
                 />
 
                 <input
-                  class="input-group__input input--field  input-client-url"
+                  class="input-group__input input--field input-client-city"
                   type="hidden"
-                  name="Страница с которой отправлена заявка: "
+                  name="8. Город: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-country"
+                  type="hidden"
+                  name="9. Страна: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-source"
+                  type="hidden"
+                  name="10. Источник рекламы: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-medium"
+                  type="hidden"
+                  name="11. Тип трафика: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-campaign"
+                  type="hidden"
+                  name="12. Название РК: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-content"
+                  type="hidden"
+                  name="13. Объявление: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-term"
+                  type="hidden"
+                  name="14. Ключевое слово: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-google-id"
+                  type="hidden"
+                  name="15. Google Client ID: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-system-data"
+                  type="hidden"
+                  name="16. Системные данные пользователя: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-reserved-field"
+                  type="hidden"
+                  name="17. Зарезервированное поле: "
                   value=""
                 />
 
@@ -268,20 +360,22 @@
                   class="input-thankyou"
                   type="hidden"
                   name="_next"
-                  value="https://ipoinstitut.ru/"
+                  value="https://pro.ipo.msk.ru/thankyou/"
                 />
                 <input
                   type="hidden"
                   name="_subject"
-                  value="Новая заявка с ИПО лендинга"
+                  value="Новая заявка с ИПО лендинга (https://pro.ipo.msk.ru/)"
                 />
                 <input type="hidden" name="_captcha" value="false" />
+
+                <input type="hidden" name="_template" value="table">
 
                 <input
                   class="input--submit input-group__input btn btn-secondary"
                   name="submit"
                   type="submit"
-                  onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
+                  onsubmit="ym(70033423,'reachGoal','form-sent');return true;"
                   value="получить консультацию"
                 />
               </div>
@@ -557,58 +651,144 @@
               <input
                   class="input-group__input input--field  input-user-name--showen"
                   type="text"
-                  name="Имя"
+                  name="1. Имя: "
                   placeholder="Ваше имя"
                 />
 
               <input
-                  class="input-group__input input--field input-user-number"
-                  type="text"
-                  name="Телефон"
-                  placeholder="Ваш телефон"
-                  required
-                  pattern="^[0-9()-.+ ]+$"
-                />
+                class="input-group__input input--field input-user-number"
+                type="text"
+                name="2. Телефон: "
+                placeholder="Ваш телефон"
+                required
+                pattern="^[0-9()-.+ ]+$"
+              />
 
-                <input
-                  class="input-group__input input--field  input-user-email"
-                  type="text"
-                  name="Почта"
-                  placeholder="Ваша почта"
-                />
+              <input
+              class="input-group__input input--field  input-user-email"
+              type="text"
+              name="3. Почта: "
+              placeholder="Ваша почта"
+              />
 
-                <input
-                  class="input-group__input input--field"
-                  type="hidden"
-                  name="Форма:"
-                  value="После программ"
-                />
+              <input
+              class="input-group__input input--field input-client-area"
+              type="hidden"
+              name="4. Направление: "
+              value=""
+            />
 
-                <input
-                  class="input-group__input input--field  input-client-url"
-                  type="hidden"
-                  name="Страница с которой отправлена заявка: "
-                  value=""
-                />
+            <input
+              class="choosen-program"
+              type="hidden"
+              name="5. Программа"
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-url"
+              type="hidden"
+              name="6. Страница с которой отправлена заявка: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field"
+              type="hidden"
+              name="7. Форма: "
+              value="После программ"
+            />
+
+            <input
+              class="input-group__input input--field input-client-city"
+              type="hidden"
+              name="8. Город: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-country"
+              type="hidden"
+              name="9. Страна: "
+              value=""
+            />
+            
+            <input
+              class="input-group__input input--field input-client-utm-source"
+              type="hidden"
+              name="10. Источник рекламы: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-utm-medium"
+              type="hidden"
+              name="11. Тип трафика: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-utm-campaign"
+              type="hidden"
+              name="12. Название РК: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-utm-content"
+              type="hidden"
+              name="13. Объявление: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-utm-term"
+              type="hidden"
+              name="14. Ключевое слово: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-google-id"
+              type="hidden"
+              name="15. Google Client ID: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-system-data"
+              type="hidden"
+              name="16. Системные данные пользователя: "
+              value=""
+            />
+
+            <input
+              class="input-group__input input--field input-client-reserved-field"
+              type="hidden"
+              name="17. Зарезервированное поле: "
+              value=""
+            />
 
               <input
                 class="input-thankyou"
                 type="hidden"
                 name="_next"
-                value="https://ipoinstitut.ru/"
+                value="https://pro.ipo.msk.ru/thankyou/"
               />
               <input
                 type="hidden"
                 name="_subject"
-                value="Новая заявка с ИПО лендинга"
+                value="Новая заявка с ИПО лендинга (https://pro.ipo.msk.ru/)"
               />
               <input type="hidden" name="_captcha" value="false" />
+
+              <input type="hidden" name="_template" value="table">
 
               <input
                 class="input--submit input-group__input btn btn-secondary"
                 type="submit"
                 name="submit"
-                onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
+                onsubmit="ym(70033423,'reachGoal','form-sent');return true;"
                 value="получить консультацию"
               />
             </div>
@@ -993,29 +1173,120 @@
               <input
                   class="input-group__input input--field  input-user-name"
                   type="text"
-                  name="Имя"
+                  name="1. Имя: "
                   placeholder="Ваше имя"
                 />
               <input
                   class="input-group__input input--field input-user-number"
                   type="text"
-                  name="Телефон"
+                  name="2. Телефон: "
                   placeholder="Ваш телефон"
                   required
                   pattern="^[0-9()-.+ ]+$"
                 />
 
                 <input
-                  class="input-group__input input--field"
+                  class="input-group__input input--field  input-user-email"
                   type="hidden"
-                  name="Форма:"
+                  name="3. Почта: "
+                  placeholder="Ваша почта"
+                />
+
+                <input
+                  class="input-group__input input--field input-client-area"
+                  type="hidden"
+                  name="4. Направление: "
+                  value=""
+                />
+
+                <input
+                  class="choosen-program"
+                  type="hidden"
+                  name="5. Программа: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-url"
+                  type="hidden"
+                  name="6. Страница с которой отправлена заявка: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-which-form"
+                  type="hidden"
+                  name="7. Форма: "
                   value="В подвале"
                 />
 
                 <input
-                  class="input-group__input input--field  input-client-url"
+                  class="input-group__input input--field input-client-city"
                   type="hidden"
-                  name="Страница с которой отправлена заявка: "
+                  name="8. Город: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-country"
+                  type="hidden"
+                  name="9. Страна: "
+                  value=""
+                />
+                
+                <input
+                  class="input-group__input input--field input-client-utm-source"
+                  type="hidden"
+                  name="10. Источник рекламы: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-medium"
+                  type="hidden"
+                  name="11. Тип трафика: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-campaign"
+                  type="hidden"
+                  name="12. Название РК: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-content"
+                  type="hidden"
+                  name="13. Объявление: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-term"
+                  type="hidden"
+                  name="14. Ключевое слово: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-google-id"
+                  type="hidden"
+                  name="15. Google Client ID: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-system-data"
+                  type="hidden"
+                  name="16. Системные данные пользователя: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-reserved-field"
+                  type="hidden"
+                  name="17. Зарезервированное поле: "
                   value=""
                 />
 
@@ -1023,20 +1294,22 @@
                 class="input-thankyou"
                 type="hidden"
                 name="_next"
-                value="https://ipoinstitut.ru/"
+                value="https://pro.ipo.msk.ru/thankyou/"
               />
               <input
                 type="hidden"
                 name="_subject"
-                value="Новая заявка с ИПО лендинга"
+                value="Новая заявка с ИПО лендинга (https://pro.ipo.msk.ru/)"
               />
               <input type="hidden" name="_captcha" value="false" />
+
+              <input type="hidden" name="_template" value="table">
 
               <input
                 class="input--submit input-group__input btn btn-secondary"
                 type="submit"
                 name="submit"
-                onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
+                onsubmit="ym(70033423,'reachGoal','form-sent');return true;"
                 value="получить консультацию"
               />
             </div>
@@ -1111,37 +1384,121 @@
           <input
                   class="input-group__input input--field  input-user-name"
                   type="text"
-                  name="Имя"
+                  name="1. Имя: "
                   placeholder="Ваше имя"
                 />
           <input
                   id="popup-form-user-number"
                   class="input-group__input input--field input-user-number"
                   type="text"
-                  name="Телефон"
+                  name="2. Телефон: "
                   placeholder="Ваш телефон"
                   required
                   pattern="^[0-9()-.+ ]+$"
                 />
 
                 <input
-                  class="input-group__input input--field  input-client-url"
+                  class="input-group__input input--field  input-user-email"
                   type="hidden"
-                  name="Страница с которой отправлена заявка: "
-                  value=""
+                  name="3. Почта: "
+                  placeholder="Ваша почта"
                 />
 
                 <input
-                  class="input-group__input input--field"
+                  class="input-group__input input--field input-client-area"
                   type="hidden"
-                  name="Форма:"
-                  value="Pop-up"
+                  name="4. Направление: "
+                  value=""
                 />
 
                 <input
                   class="choosen-program"
                   type="hidden"
-                  name="Программа"
+                  name="5. Программа"
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-url"
+                  type="hidden"
+                  name="6. Страница с которой отправлена заявка: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-which-form"
+                  type="hidden"
+                  name="7. Форма: "
+                  value="Pop-up"
+                />
+
+                <input
+                  class="input-group__input input--field input-client-city"
+                  type="hidden"
+                  name="8. Город: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-country"
+                  type="hidden"
+                  name="9. Страна: "
+                  value=""
+                />
+                
+                <input
+                  class="input-group__input input--field input-client-utm-source"
+                  type="hidden"
+                  name="10. Источник рекламы: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-medium"
+                  type="hidden"
+                  name="11. Тип трафика: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-campaign"
+                  type="hidden"
+                  name="12. Название РК: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-content"
+                  type="hidden"
+                  name="13. Объявление: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-utm-term"
+                  type="hidden"
+                  name="14. Ключевое слово: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-google-id"
+                  type="hidden"
+                  name="15. Google Client ID: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-system-data"
+                  type="hidden"
+                  name="16. Системные данные пользователя: "
+                  value=""
+                />
+
+                <input
+                  class="input-group__input input--field input-client-reserved-field"
+                  type="hidden"
+                  name="17. Зарезервированное поле: "
                   value=""
                 />
 
@@ -1149,20 +1506,22 @@
             class="input-thankyou"
             type="hidden"
             name="_next"
-            value="https://ipoinstitut.ru/"
+            value="https://pro.ipo.msk.ru/thankyou/"
           />
           <input
             type="hidden"
             name="_subject"
-            value="Новая заявка с ИПО лендинга"
+            value="Новая заявка с ИПО лендинга (https://pro.ipo.msk.ru/)"
           />
           <input type="hidden" name="_captcha" value="false" />
+
+          <input type="hidden" name="_template" value="table">
 
           <input
             class="input--submit input-group__input btn btn-secondary"
             name="submit"
             type="submit"
-            onsubmit="ym(69375577,'reachGoal','form-sent');return true;"
+            onsubmit="ym(70033423,'reachGoal','form-sent');return true;"
             value="получить консультацию"
           />
         </div>

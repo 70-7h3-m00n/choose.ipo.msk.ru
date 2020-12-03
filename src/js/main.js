@@ -4,13 +4,17 @@ import '../scss/main.scss';
 const sectionPrograms = document.getElementById('section-programs');
 const body = document.getElementById('body');
 
-const clientUrlInputs = document.querySelectorAll('.input-client-url');
-const clientUrl = window.location.href;
-const clientUrlInputsArr = Array.prototype.slice.call(clientUrlInputs);
+function getClientUrl(){
+  const clientUrlInputs = document.querySelectorAll('.input-client-url');
+  const clientUrlInputsArr = Array.prototype.slice.call(clientUrlInputs);
+  const clientUrl = window.location.href;
+  
+  clientUrlInputsArr.forEach(input => {
+    input.value = clientUrl;
+  })
+}
 
-clientUrlInputsArr.forEach(input => {
-  input.value = clientUrl;
-})
+getClientUrl();
 
 // const topBanner = document.getElementById('js-top-banner');
 // topBanner.addEventListener('click', () =>{
@@ -502,9 +506,15 @@ function showPopUpForm(e){
   const choosenProgramInputs = document.querySelectorAll('.choosen-program');
   const choosenProgramInputsArr = Array.prototype.slice.call(choosenProgramInputs);
 
-  choosenProgramInputsArr.forEach(input => {
-    input.value = clickedProgramTitle;
-  })
+  if(clickedProgram.classList.contains('cards__card')){
+    choosenProgramInputsArr.forEach(input => {
+      input.value = clickedProgramTitle;
+    })
+  }else{
+    choosenProgramInputsArr.forEach(input => {
+      input.value = '';
+    })
+  }
 
   userNumber.focus();
 
