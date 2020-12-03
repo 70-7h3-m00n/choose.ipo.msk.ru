@@ -582,9 +582,15 @@ function showPopUpForm(e){
   const choosenProgramInputs = document.querySelectorAll('.choosen-program');
   const choosenProgramInputsArr = Array.prototype.slice.call(choosenProgramInputs);
 
-  choosenProgramInputsArr.forEach(input => {
-    input.value = clickedProgramTitle;
-  })
+  if(clickedProgram.classList.contains('cards__card')){
+    choosenProgramInputsArr.forEach(input => {
+      input.value = clickedProgramTitle;
+    })
+  }else{
+    choosenProgramInputsArr.forEach(input => {
+      input.value = '';
+    })
+  }
 
   userNumber.focus();
 
